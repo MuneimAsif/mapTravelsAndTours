@@ -1,0 +1,230 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Check, Star, Clock, Building2, Plane, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const packages = [
+  {
+    name: "Economy",
+    subtitle: "Essential Umrah Experience",
+    price: 1299,
+    duration: "7 Days / 6 Nights",
+    hotel: "3-Star Hotel",
+    distance: "500m from Haram",
+    popular: false,
+    features: [
+      "Economy class flights",
+      "3-star accommodation",
+      "Shared transfers",
+      "Visa processing",
+      "Basic travel insurance",
+      "Group guidance",
+    ],
+  },
+  {
+    name: "Premium",
+    subtitle: "Enhanced Spiritual Journey",
+    price: 2199,
+    duration: "10 Days / 9 Nights",
+    hotel: "4-Star Hotel",
+    distance: "300m from Haram",
+    popular: true,
+    features: [
+      "Premium economy flights",
+      "4-star accommodation",
+      "Private transfers",
+      "Visa processing",
+      "Comprehensive insurance",
+      "Personal guide",
+      "Ziyarah tours",
+      "24/7 support",
+    ],
+  },
+  {
+    name: "Luxury",
+    subtitle: "Ultimate Sacred Experience",
+    price: 3999,
+    duration: "14 Days / 13 Nights",
+    hotel: "5-Star Hotel",
+    distance: "Haram View",
+    popular: false,
+    features: [
+      "Business class flights",
+      "5-star luxury hotel",
+      "VIP private transfers",
+      "Priority visa processing",
+      "Premium insurance",
+      "Dedicated guide",
+      "Full Ziyarah package",
+      "24/7 concierge",
+      "Special amenities",
+      "VIP Haram access",
+    ],
+  },
+];
+
+const Packages = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  return (
+    <section id="packages" className="section-padding bg-background">
+      <div className="container-custom">
+        {/* Section Header */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
+            Our Packages
+          </p>
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Choose Your
+            <span className="text-primary block mt-2">Perfect Package</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Carefully curated packages to suit every budget. All packages include 
+            visa, flights, accommodation, and essential services.
+          </p>
+        </motion.div>
+
+        {/* Packages Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => (
+            <motion.div
+              key={pkg.name}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className={`relative rounded-3xl overflow-hidden ${
+                pkg.popular
+                  ? "bg-primary text-primary-foreground scale-105 shadow-elevated"
+                  : "bg-card border border-border shadow-card"
+              }`}
+            >
+              {/* Popular Badge */}
+              {pkg.popular && (
+                <div className="absolute top-6 right-6">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gold text-primary text-xs font-bold">
+                    <Star className="w-3 h-3 fill-current" />
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+              <div className="p-8">
+                {/* Package Header */}
+                <div className="mb-8">
+                  <h3 className={`font-serif text-2xl font-bold ${
+                    pkg.popular ? "text-primary-foreground" : "text-foreground"
+                  }`}>
+                    {pkg.name}
+                  </h3>
+                  <p className={`text-sm mt-1 ${
+                    pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
+                  }`}>
+                    {pkg.subtitle}
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-1">
+                    <span className={`text-sm ${
+                      pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
+                    }`}>
+                      From
+                    </span>
+                    <span className={`font-serif text-5xl font-bold ${
+                      pkg.popular ? "text-gold" : "text-foreground"
+                    }`}>
+                      ${pkg.price}
+                    </span>
+                  </div>
+                  <p className={`text-sm mt-2 ${
+                    pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
+                  }`}>
+                    per person
+                  </p>
+                </div>
+
+                {/* Quick Info */}
+                <div className={`grid grid-cols-2 gap-4 mb-8 p-4 rounded-xl ${
+                  pkg.popular ? "bg-white/10" : "bg-secondary/50"
+                }`}>
+                  <div className="flex items-center gap-2">
+                    <Clock className={`w-4 h-4 ${
+                      pkg.popular ? "text-gold" : "text-primary"
+                    }`} />
+                    <span className="text-sm">{pkg.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Building2 className={`w-4 h-4 ${
+                      pkg.popular ? "text-gold" : "text-primary"
+                    }`} />
+                    <span className="text-sm">{pkg.hotel}</span>
+                  </div>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-3 mb-8">
+                  {pkg.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-3">
+                      <Check className={`w-5 h-5 flex-shrink-0 ${
+                        pkg.popular ? "text-gold" : "text-gold"
+                      }`} />
+                      <span className={`text-sm ${
+                        pkg.popular ? "text-primary-foreground/90" : "text-foreground"
+                      }`}>
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <Button
+                  className={`w-full py-6 font-semibold text-base ${
+                    pkg.popular
+                      ? "btn-gold"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  }`}
+                  asChild
+                >
+                  <a href="#contact">Book This Package</a>
+                </Button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Custom Package CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center mt-16"
+        >
+          <p className="text-muted-foreground mb-4">
+            Need something different? Create your own personalized package.
+          </p>
+          <Button 
+            variant="outline" 
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6"
+            asChild
+          >
+            <a href="#customize">
+              Build Custom Package
+            </a>
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Packages;
