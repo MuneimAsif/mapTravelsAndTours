@@ -3,7 +3,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, Star, Clock, Building2, Moon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import madinahImage from "@/assets/madinah-mosque.jpg";
+import kaabaImage from "@/assets/kaaba-makkah.jpg";
+import madinahImage from "@/assets/madinah-nabawi.jpg";
 
 const umrahPackages = [
   {
@@ -98,34 +99,91 @@ const RamadanUmrahSection = () => {
           </p>
         </motion.div>
 
-        {/* Feature Image */}
+        {/* Dual Feature Images - Makkah & Madinah */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {/* Kaaba - Makkah */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative rounded-3xl overflow-hidden group"
+          >
+            <img
+              src={kaabaImage}
+              alt="Kaaba in Masjid al-Haram, Makkah"
+              className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <div className="text-white">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 mb-3">
+                  <Moon className="w-4 h-4 fill-current" />
+                  <span className="text-sm font-medium">Holy Makkah</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl font-bold mb-2">
+                  The Sacred Kaaba
+                </h3>
+                <p className="text-white/80 text-sm md:text-base">
+                  Perform Tawaf around the House of Allah during the blessed month of Ramadan.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Masjid-e-Nabawi - Madinah */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative rounded-3xl overflow-hidden group"
+          >
+            <img
+              src={madinahImage}
+              alt="Prophet's Mosque in Madinah"
+              className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <div className="text-white">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 mb-3">
+                  <Moon className="w-4 h-4 fill-current" />
+                  <span className="text-sm font-medium">Holy Madinah</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl font-bold mb-2">
+                  Prophet's Mosque
+                </h3>
+                <p className="text-white/80 text-sm md:text-base">
+                  Visit the peaceful Masjid-e-Nabawi and offer prayers at Riyad-ul-Jannah.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative rounded-3xl overflow-hidden mb-16 max-w-4xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative rounded-2xl overflow-hidden mb-16 bg-gradient-to-r from-primary via-primary/95 to-primary p-8 md:p-10"
         >
-          <img
-            src={madinahImage}
-            alt="Prophet's Mosque in Madinah"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-transparent" />
-          <div className="absolute inset-0 flex items-center p-8 md:p-12">
-            <div className="text-white max-w-md">
-              <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-2">
                 Blessed Journey Awaits
               </h3>
-              <p className="text-white/80 mb-4">
+              <p className="text-white/80">
                 Join thousands of pilgrims this Ramadan for a transformative spiritual experience.
               </p>
-              <Button className="btn-gold" asChild>
-                <a href="#contact">
-                  <Moon className="mr-2 w-4 h-4" />
-                  Enquire Now
-                </a>
-              </Button>
             </div>
+            <Button className="btn-gold whitespace-nowrap" asChild>
+              <a href="#contact">
+                <Moon className="mr-2 w-4 h-4" />
+                Enquire Now
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+            </Button>
           </div>
         </motion.div>
 
