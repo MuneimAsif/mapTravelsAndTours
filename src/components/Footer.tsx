@@ -1,4 +1,4 @@
-import { Plane, Facebook, Instagram, Twitter, Youtube, ArrowUp } from "lucide-react";
+import { Plane, Facebook, Instagram, Twitter, Youtube, ArrowUp, Moon, Globe } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -8,8 +8,8 @@ const footerLinks = {
     { name: "Contact", href: "#contact" },
   ],
   services: [
-    { name: "Visa Processing", href: "#services" },
-    { name: "Hotel Booking", href: "#services" },
+    { name: "Ramadan Umrah", href: "#packages" },
+    { name: "International Tours", href: "#services" },
     { name: "Flight Booking", href: "#services" },
     { name: "Custom Packages", href: "#customize" },
   ],
@@ -41,22 +41,27 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
+              <div className="relative w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
                 <Plane className="w-6 h-6 text-primary rotate-45" />
+                <Moon className="w-3 h-3 text-primary absolute -top-1 -right-1 fill-current" />
               </div>
               <div>
                 <span className="font-serif font-bold text-xl text-primary-foreground block">
-                  Al-Safar
+                  MAP Travel & Tourism
                 </span>
                 <span className="text-xs tracking-wider uppercase text-primary-foreground/70">
-                  Umrah Services
+                  Global Tours • Ramadan Umrah
                 </span>
               </div>
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm leading-relaxed">
-              Your trusted partner for Umrah journeys. We provide complete travel solutions 
-              with personalized care and unmatched expertise for over 15 years.
+              Your trusted global travel partner. Experience worldwide destinations with 
+              expert guidance. Special Ramadan Umrah packages now available for the blessed season.
             </p>
+            <div className="flex items-center gap-2 mb-6 text-gold">
+              <Globe className="w-4 h-4" />
+              <span className="text-sm font-medium">Serving travelers worldwide</span>
+            </div>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -126,7 +131,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-primary-foreground/60">
-            © 2024 Al-Safar Umrah Services. All rights reserved.
+            © 2025 MAP Travel & Tourism. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Shield, Heart, Globe, Award, CheckCircle } from "lucide-react";
+import { Shield, Heart, Globe, Award, CheckCircle, Moon } from "lucide-react";
 import madinahImage from "@/assets/madinah-mosque.jpg";
 
 const values = [
   {
-    icon: Shield,
-    title: "Trust & Reliability",
-    description: "Licensed and certified by Saudi Ministry of Hajj",
+    icon: Globe,
+    title: "Global Reach",
+    description: "Worldwide destinations with local expertise",
   },
   {
     icon: Heart,
@@ -16,14 +16,14 @@ const values = [
     description: "Dedicated support throughout your journey",
   },
   {
-    icon: Globe,
-    title: "Complete Solutions",
-    description: "End-to-end travel management services",
+    icon: Shield,
+    title: "Trust & Reliability",
+    description: "Licensed and certified travel experts",
   },
   {
     icon: Award,
     title: "Best Value",
-    description: "Market-beating prices with premium quality",
+    description: "Competitive prices with premium quality",
   },
 ];
 
@@ -50,6 +50,12 @@ const About = () => {
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+              
+              {/* Ramadan Overlay Badge */}
+              <div className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full bg-gold/90 text-primary">
+                <Moon className="w-4 h-4 fill-current" />
+                <span className="text-sm font-semibold">Ramadan Special</span>
+              </div>
             </div>
 
             {/* Floating Card */}
@@ -65,7 +71,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="font-serif text-xl font-bold text-foreground">Years of</p>
-                  <p className="text-muted-foreground">Excellence</p>
+                  <p className="text-muted-foreground">Global Excellence</p>
                 </div>
               </div>
             </motion.div>
@@ -83,23 +89,23 @@ const About = () => {
           >
             <div>
               <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
-                About Al-Safar
+                About MAP Travel & Tourism
               </p>
               <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                Your Trusted Partner in
-                <span className="text-primary block mt-2">Sacred Journeys</span>
+                Your Global Partner for
+                <span className="text-primary block mt-2">Unforgettable Journeys</span>
               </h2>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Al-Safar, we understand that Umrah is more than just a trip—it's a 
-              life-changing spiritual experience. With over 15 years of expertise, we've 
-              helped more than 50,000 pilgrims fulfill their sacred obligations with 
-              comfort, dignity, and peace of mind.
+              MAP Travel & Tourism is your premier global travel partner, offering exceptional 
+              travel experiences worldwide. With over 15 years of expertise, we've helped more 
+              than 50,000 travelers explore the world. This Ramadan, we're proud to offer 
+              special Umrah packages to the Holy Lands of Makkah and Madinah.
             </p>
 
             <div className="space-y-4">
-              {["Government licensed and fully insured", "24/7 on-ground support in Saudi Arabia", "Transparent pricing with no hidden fees", "Customizable packages for every budget"].map((item, index) => (
+              {["Worldwide destinations and holiday packages", "Special Ramadan Umrah services to Makkah & Madinah", "24/7 customer support across all time zones", "Transparent pricing with no hidden fees"].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 20 }}

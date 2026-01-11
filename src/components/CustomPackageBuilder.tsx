@@ -8,7 +8,7 @@ import {
   Clock, 
   Plus, 
   Check,
-  Sparkles,
+  Moon,
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,7 @@ const addOnServices = [
   { id: "insurance", name: "Premium Insurance", price: 100, selected: false },
   { id: "medical", name: "Medical Support", price: 75, selected: false },
   { id: "vip", name: "VIP Airport Service", price: 120, selected: false },
-  { id: "meals", name: "Meal Package", price: 180, selected: false },
+  { id: "meals", name: "Iftar Package", price: 180, selected: false },
 ];
 
 const CustomPackageBuilder = () => {
@@ -71,16 +71,16 @@ const CustomPackageBuilder = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Build Your Perfect Journey</span>
+            <Moon className="w-4 h-4 fill-current" />
+            <span className="text-sm font-medium">Build Your Ramadan Umrah Package</span>
           </div>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Customize Your
-            <span className="text-primary block mt-2">Umrah Package</span>
+            <span className="text-primary block mt-2">Blessed Journey</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Tailor every aspect of your journey. Select your preferences and we'll create 
-            a personalized package just for you.
+            Tailor every aspect of your Ramadan Umrah. Select your preferences and we'll create 
+            a personalized spiritual journey just for you.
           </p>
         </motion.div>
 
@@ -100,7 +100,7 @@ const CustomPackageBuilder = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Duration of Stay</h3>
-                  <p className="text-sm text-muted-foreground">How many nights in Saudi Arabia?</p>
+                  <p className="text-sm text-muted-foreground">How many nights in the Holy Lands?</p>
                 </div>
               </div>
               
@@ -132,7 +132,7 @@ const CustomPackageBuilder = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Hotel Category</h3>
-                  <p className="text-sm text-muted-foreground">Choose your accommodation level</p>
+                  <p className="text-sm text-muted-foreground">Choose your accommodation near Haram</p>
                 </div>
               </div>
 
@@ -204,7 +204,7 @@ const CustomPackageBuilder = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Additional Services</h3>
-                  <p className="text-sm text-muted-foreground">Enhance your experience</p>
+                  <p className="text-sm text-muted-foreground">Enhance your Ramadan experience</p>
                 </div>
               </div>
 
@@ -243,7 +243,10 @@ const CustomPackageBuilder = () => {
           >
             <div className="sticky top-28">
               <div className="card-premium bg-primary text-primary-foreground">
-                <h3 className="font-serif text-2xl font-bold mb-6">Package Summary</h3>
+                <div className="flex items-center gap-2 mb-6">
+                  <Moon className="w-5 h-5 text-gold fill-gold" />
+                  <h3 className="font-serif text-2xl font-bold">Ramadan Package</h3>
+                </div>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between items-center pb-3 border-b border-white/20">
@@ -263,7 +266,7 @@ const CustomPackageBuilder = () => {
                     </span>
                   </div>
                   <div className="flex justify-between items-center pb-3 border-b border-white/20">
-                    <span className="text-primary-foreground/70">Visa</span>
+                    <span className="text-primary-foreground/70">Umrah Visa</span>
                     <span className="font-semibold">Included</span>
                   </div>
                   {addOns.filter(a => a.selected).length > 0 && (

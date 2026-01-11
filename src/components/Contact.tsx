@@ -8,7 +8,8 @@ import {
   Clock, 
   Send,
   MessageCircle,
-  CheckCircle
+  CheckCircle,
+  Moon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,7 +26,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@alsafar.com",
+    value: "info@maptravel.com",
     description: "Response within 24 hours",
   },
   {
@@ -75,16 +76,20 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold mb-4">
+                <Moon className="w-3 h-3 fill-current" />
+                <span className="text-xs font-medium">Ramadan Booking Open</span>
+              </div>
               <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
                 Get In Touch
               </p>
               <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Start Your Sacred
-                <span className="text-primary block mt-2">Journey Today</span>
+                Start Your Journey
+                <span className="text-primary block mt-2">With MAP Travel</span>
               </h2>
               <p className="text-lg text-muted-foreground">
-                Ready to embark on your Umrah journey? Our team is here to assist you 
-                every step of the way. Reach out today.
+                Ready to explore the world or embark on a blessed Ramadan Umrah? Our team 
+                is here to assist you every step of the way. Reach out today.
               </p>
             </div>
 

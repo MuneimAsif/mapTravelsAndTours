@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Play, Star, Users, Calendar, ArrowRight } from "lucide-react";
+import { Play, Star, Users, Calendar, ArrowRight, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-kaaba.jpg";
 
 const stats = [
-  { icon: Users, value: "50,000+", label: "Pilgrims Served" },
+  { icon: Users, value: "50,000+", label: "Happy Travelers" },
   { icon: Star, value: "4.9/5", label: "Customer Rating" },
   { icon: Calendar, value: "15+", label: "Years Experience" },
 ];
@@ -26,6 +26,16 @@ const Hero = () => {
       {/* Decorative Elements */}
       <div className="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
       <div className="absolute bottom-1/4 left-10 w-96 h-96 rounded-full bg-sky/10 blur-3xl" />
+      
+      {/* Crescent Moon Decoration */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="absolute top-32 right-20 hidden lg:block"
+      >
+        <Moon className="w-16 h-16 text-gold/30 fill-gold/20" />
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 container-custom min-h-screen flex items-center pt-24">
@@ -37,32 +47,34 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-white space-y-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <Star className="w-4 h-4 text-gold fill-gold" />
-              <span className="text-sm font-medium">Trusted by 50,000+ Pilgrims</span>
+            {/* Ramadan Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/30">
+              <Moon className="w-4 h-4 text-gold fill-gold" />
+              <span className="text-sm font-medium text-gold">Ramadan Umrah Special 2025</span>
             </div>
 
             <h1 className="font-serif text-5xl lg:text-7xl font-bold leading-tight">
-              Your Sacred
-              <span className="block text-gold mt-2">Journey Awaits</span>
+              Your Global
+              <span className="block text-gold mt-2">Travel Partner</span>
             </h1>
 
             <p className="text-lg text-white/80 max-w-lg leading-relaxed">
-              Experience a seamless and spiritually enriching Umrah journey with Al-Safar. 
-              We provide complete travel solutions with personalized care and unmatched expertise.
+              MAP Travel & Tourism brings you world-class travel experiences. This Ramadan, 
+              embark on a blessed Umrah journey with our exclusive packages to the Holy Lands.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Button className="btn-gold group" asChild>
-                <a href="#customize">
-                  Build Your Package
+                <a href="#packages">
+                  <Moon className="mr-2 w-4 h-4" />
+                  Ramadan Umrah Packages
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button className="btn-outline-light group" asChild>
-                <a href="#packages">
+                <a href="#services">
                   <Play className="mr-2 w-5 h-5" />
-                  View Packages
+                  Explore Services
                 </a>
               </Button>
             </div>
