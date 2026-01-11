@@ -9,7 +9,7 @@ import {
   Send,
   MessageCircle,
   CheckCircle,
-  Moon
+  Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,9 +76,9 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold mb-4">
-                <Moon className="w-3 h-3 fill-current" />
-                <span className="text-xs font-medium">Ramadan Booking Open</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4">
+                <Globe className="w-3 h-3" />
+                <span className="text-xs font-medium">Global Support Available</span>
               </div>
               <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
                 Get In Touch
@@ -88,8 +88,8 @@ const Contact = () => {
                 <span className="text-primary block mt-2">With MAP Travel</span>
               </h2>
               <p className="text-lg text-muted-foreground">
-                Ready to explore the world or embark on a blessed Ramadan Umrah? Our team 
-                is here to assist you every step of the way. Reach out today.
+                Ready to explore the world? Whether you're planning a vacation, business trip, 
+                or special getaway, our team is here to assist you every step of the way.
               </p>
             </div>
 

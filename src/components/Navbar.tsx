@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Plane, Phone, Moon } from "lucide-react";
+import { Menu, X, Plane, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -8,7 +8,7 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Packages", href: "#packages" },
-  { name: "Custom Package", href: "#customize" },
+  { name: "Ramadan Umrah", href: "#ramadan-umrah" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -43,8 +43,8 @@ const Navbar = () => {
               <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
                 <Plane className="w-5 h-5 text-primary rotate-45" />
               </div>
-              {/* Crescent Moon accent */}
-              <Moon className="w-3 h-3 text-gold absolute -top-1 -right-1 fill-gold" />
+              {/* Globe accent */}
+              <Globe className="w-3 h-3 text-gold absolute -top-1 -right-1" />
             </div>
             <div className="flex flex-col">
               <span className={`font-serif font-bold text-lg leading-tight transition-colors ${
@@ -55,7 +55,7 @@ const Navbar = () => {
               <span className={`text-xs tracking-wider uppercase transition-colors ${
                 isScrolled ? "text-muted-foreground" : "text-white/70"
               }`}>
-                Global Tours • Ramadan Umrah
+                Explore The World
               </span>
             </div>
           </a>
@@ -95,7 +95,7 @@ const Navbar = () => {
               className="btn-gold text-sm py-2.5 px-6"
               asChild
             >
-              <a href="#customize">Book Umrah</a>
+              <a href="#packages">Book Now</a>
             </Button>
           </div>
 
@@ -136,8 +136,8 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <Button className="btn-gold mt-4" asChild>
-                <a href="#customize" onClick={() => setIsMobileMenuOpen(false)}>
-                  Book Umrah
+                <a href="#packages" onClick={() => setIsMobileMenuOpen(false)}>
+                  Book Now
                 </a>
               </Button>
             </div>

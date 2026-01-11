@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Play, Star, Users, Calendar, ArrowRight, Moon } from "lucide-react";
+import { Play, Star, Users, Calendar, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-kaaba.jpg";
+import heroVideo from "@/assets/hero-travel-video.mp4";
+import heroImage from "@/assets/hero-global-travel.jpg";
 
 const stats = [
   { icon: Users, value: "50,000+", label: "Happy Travelers" },
@@ -12,13 +13,18 @@ const stats = [
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Fallback Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Holy Kaaba in Makkah"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroImage}
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
       </div>
@@ -27,14 +33,14 @@ const Hero = () => {
       <div className="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
       <div className="absolute bottom-1/4 left-10 w-96 h-96 rounded-full bg-sky/10 blur-3xl" />
       
-      {/* Crescent Moon Decoration */}
+      {/* Globe Decoration */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="absolute top-32 right-20 hidden lg:block"
       >
-        <Moon className="w-16 h-16 text-gold/30 fill-gold/20" />
+        <Globe className="w-16 h-16 text-gold/30" />
       </motion.div>
 
       {/* Content */}
@@ -47,34 +53,35 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-white space-y-8"
           >
-            {/* Ramadan Badge */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/30">
-              <Moon className="w-4 h-4 text-gold fill-gold" />
-              <span className="text-sm font-medium text-gold">Ramadan Umrah Special 2025</span>
+              <Globe className="w-4 h-4 text-gold" />
+              <span className="text-sm font-medium text-gold">Your Gateway to the World</span>
             </div>
 
             <h1 className="font-serif text-5xl lg:text-7xl font-bold leading-tight">
-              Your Global
-              <span className="block text-gold mt-2">Travel Partner</span>
+              Explore The
+              <span className="block text-gold mt-2">World With Us</span>
             </h1>
 
             <p className="text-lg text-white/80 max-w-lg leading-relaxed">
-              MAP Travel & Tourism brings you world-class travel experiences. This Ramadan, 
-              embark on a blessed Umrah journey with our exclusive packages to the Holy Lands.
+              MAP Travel & Tourism is your premier global travel partner. From exotic beaches 
+              to iconic landmarks, business trips to family adventures – we make every journey 
+              extraordinary.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Button className="btn-gold group" asChild>
                 <a href="#packages">
-                  <Moon className="mr-2 w-4 h-4" />
-                  Ramadan Umrah Packages
+                  <Globe className="mr-2 w-4 h-4" />
+                  Explore Destinations
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button className="btn-outline-light group" asChild>
                 <a href="#services">
                   <Play className="mr-2 w-5 h-5" />
-                  Explore Services
+                  Our Services
                 </a>
               </Button>
             </div>

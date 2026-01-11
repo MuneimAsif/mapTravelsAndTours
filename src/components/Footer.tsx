@@ -1,4 +1,4 @@
-import { Plane, Facebook, Instagram, Twitter, Youtube, ArrowUp, Moon, Globe } from "lucide-react";
+import { Plane, Facebook, Instagram, Twitter, Youtube, ArrowUp, Globe } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -8,10 +8,10 @@ const footerLinks = {
     { name: "Contact", href: "#contact" },
   ],
   services: [
-    { name: "Ramadan Umrah", href: "#packages" },
     { name: "International Tours", href: "#services" },
     { name: "Flight Booking", href: "#services" },
-    { name: "Custom Packages", href: "#customize" },
+    { name: "Hotel Reservations", href: "#services" },
+    { name: "Ramadan Umrah", href: "#ramadan-umrah" },
   ],
   support: [
     { name: "FAQs", href: "#" },
@@ -43,24 +43,24 @@ const Footer = () => {
             <a href="#home" className="flex items-center gap-2 mb-6">
               <div className="relative w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
                 <Plane className="w-6 h-6 text-primary rotate-45" />
-                <Moon className="w-3 h-3 text-primary absolute -top-1 -right-1 fill-current" />
+                <Globe className="w-3 h-3 text-primary absolute -top-1 -right-1" />
               </div>
               <div>
                 <span className="font-serif font-bold text-xl text-primary-foreground block">
                   MAP Travel & Tourism
                 </span>
                 <span className="text-xs tracking-wider uppercase text-primary-foreground/70">
-                  Global Tours • Ramadan Umrah
+                  Explore The World
                 </span>
               </div>
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm leading-relaxed">
               Your trusted global travel partner. Experience worldwide destinations with 
-              expert guidance. Special Ramadan Umrah packages now available for the blessed season.
+              expert guidance. From beach getaways to cultural expeditions, we make every journey extraordinary.
             </p>
             <div className="flex items-center gap-2 mb-6 text-gold">
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">Serving travelers worldwide</span>
+              <span className="text-sm font-medium">Serving travelers in 100+ countries</span>
             </div>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
