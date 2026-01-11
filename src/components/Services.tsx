@@ -6,53 +6,60 @@ import {
   Plane,
   Building2,
   Car,
-  Stethoscope,
+  Globe,
   Compass,
   ArrowRight,
+  Moon,
 } from "lucide-react";
 
 const services = [
   {
+    icon: Moon,
+    title: "Ramadan Umrah",
+    description:
+      "Special Ramadan Umrah packages with spiritual guidance, premium accommodations, and blessed journey arrangements.",
+    features: ["Holy Land Tours", "Spiritual Guidance", "Ramadan Special"],
+    featured: true,
+  },
+  {
+    icon: Globe,
+    title: "International Tours",
+    description:
+      "Explore the world with our curated international holiday packages. From Europe to Asia, we've got you covered.",
+    features: ["Global Destinations", "Group Tours", "Custom Itineraries"],
+    featured: false,
+  },
+  {
     icon: FileText,
     title: "Visa Processing",
     description:
-      "Fast and hassle-free Umrah visa processing with complete documentation support and guaranteed approval.",
-    features: ["Quick Processing", "Document Assistance", "100% Approval Rate"],
+      "Fast and hassle-free visa processing for all destinations with complete documentation support.",
+    features: ["Quick Processing", "All Countries", "Document Assistance"],
+    featured: false,
   },
   {
     icon: Plane,
-    title: "Airline Booking",
+    title: "Flight Booking",
     description:
-      "Premium flight bookings with major airlines. Choose from economy to business class with flexible dates.",
-    features: ["Major Airlines", "Flexible Dates", "Best Prices"],
+      "Premium flight bookings with major airlines worldwide. Choose from economy to business class.",
+    features: ["Major Airlines", "Best Prices", "Flexible Dates"],
+    featured: false,
   },
   {
     icon: Building2,
     title: "Hotel Accommodation",
     description:
-      "Stay near Haram with our curated selection of hotels ranging from 3-star to 5-star luxury.",
-    features: ["Near Haram", "All Categories", "Verified Properties"],
-  },
-  {
-    icon: Car,
-    title: "Transportation",
-    description:
-      "Comfortable ground transportation including airport transfers and inter-city travel between Makkah and Madinah.",
-    features: ["Airport Transfers", "AC Vehicles", "Professional Drivers"],
-  },
-  {
-    icon: Stethoscope,
-    title: "Medical Assistance",
-    description:
-      "24/7 medical support with access to healthcare facilities and emergency assistance throughout your journey.",
-    features: ["24/7 Support", "Emergency Care", "Health Insurance"],
+      "Curated selection of hotels worldwide ranging from budget-friendly to 5-star luxury properties.",
+    features: ["Global Hotels", "All Categories", "Verified Properties"],
+    featured: false,
   },
   {
     icon: Compass,
-    title: "End-to-End Guidance",
+    title: "Holiday Packages",
     description:
-      "Expert religious guidance and assistance for all Umrah rituals with experienced scholars and guides.",
-    features: ["Religious Guidance", "Ritual Assistance", "Multilingual Guides"],
+      "Complete holiday packages with flights, hotels, and tours. Perfect for family vacations and honeymoons.",
+    features: ["All-Inclusive", "Family Packages", "Honeymoon Specials"],
+    featured: false,
   },
 ];
 
@@ -75,12 +82,12 @@ const Services = () => {
             Our Services
           </p>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Complete Umrah
-            <span className="text-primary block mt-2">Travel Solutions</span>
+            Global Travel
+            <span className="text-primary block mt-2">Complete Solutions</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From visa processing to spiritual guidance, we handle every aspect of your 
-            sacred journey with professionalism and care.
+            From international tours to blessed Ramadan Umrah journeys, we handle every 
+            aspect of your travel with professionalism and care.
           </p>
         </motion.div>
 
@@ -92,11 +99,26 @@ const Services = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group card-premium hover:border-gold/30 border border-transparent"
+              className={`group card-premium hover:border-gold/30 border border-transparent ${
+                service.featured ? "ring-2 ring-gold/50 bg-gold/5" : ""
+              }`}
             >
+              {/* Featured Badge */}
+              {service.featured && (
+                <div className="absolute -top-3 left-6 px-3 py-1 bg-gold text-primary text-xs font-bold rounded-full">
+                  Ramadan Special
+                </div>
+              )}
+
               {/* Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-navy-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <service.icon className="w-8 h-8 text-primary-foreground" />
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg ${
+                service.featured 
+                  ? "bg-gradient-gold" 
+                  : "bg-gradient-to-br from-primary to-navy-light"
+              }`}>
+                <service.icon className={`w-8 h-8 ${
+                  service.featured ? "text-primary" : "text-primary-foreground"
+                }`} />
               </div>
 
               {/* Content */}

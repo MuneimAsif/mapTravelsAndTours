@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Plane, Phone } from "lucide-react";
+import { Menu, X, Plane, Phone, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -43,17 +43,19 @@ const Navbar = () => {
               <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
                 <Plane className="w-5 h-5 text-primary rotate-45" />
               </div>
+              {/* Crescent Moon accent */}
+              <Moon className="w-3 h-3 text-gold absolute -top-1 -right-1 fill-gold" />
             </div>
             <div className="flex flex-col">
               <span className={`font-serif font-bold text-lg leading-tight transition-colors ${
                 isScrolled ? "text-primary" : "text-white"
               }`}>
-                Al-Safar
+                MAP Travel & Tourism
               </span>
               <span className={`text-xs tracking-wider uppercase transition-colors ${
                 isScrolled ? "text-muted-foreground" : "text-white/70"
               }`}>
-                Umrah Services
+                Global Tours • Ramadan Umrah
               </span>
             </div>
           </a>
@@ -93,7 +95,7 @@ const Navbar = () => {
               className="btn-gold text-sm py-2.5 px-6"
               asChild
             >
-              <a href="#customize">Book Now</a>
+              <a href="#customize">Book Umrah</a>
             </Button>
           </div>
 
@@ -135,7 +137,7 @@ const Navbar = () => {
               ))}
               <Button className="btn-gold mt-4" asChild>
                 <a href="#customize" onClick={() => setIsMobileMenuOpen(false)}>
-                  Book Now
+                  Book Umrah
                 </a>
               </Button>
             </div>

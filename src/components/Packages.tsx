@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Star, Clock, Building2, Plane, Users } from "lucide-react";
+import { Check, Star, Clock, Building2, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const packages = [
   {
-    name: "Economy",
-    subtitle: "Essential Umrah Experience",
+    name: "Economy Umrah",
+    subtitle: "Essential Ramadan Experience",
     price: 1299,
     duration: "7 Days / 6 Nights",
     hotel: "3-Star Hotel",
@@ -17,14 +17,14 @@ const packages = [
       "Economy class flights",
       "3-star accommodation",
       "Shared transfers",
-      "Visa processing",
+      "Umrah visa processing",
       "Basic travel insurance",
       "Group guidance",
     ],
   },
   {
-    name: "Premium",
-    subtitle: "Enhanced Spiritual Journey",
+    name: "Premium Umrah",
+    subtitle: "Blessed Ramadan Journey",
     price: 2199,
     duration: "10 Days / 9 Nights",
     hotel: "4-Star Hotel",
@@ -34,7 +34,7 @@ const packages = [
       "Premium economy flights",
       "4-star accommodation",
       "Private transfers",
-      "Visa processing",
+      "Umrah visa processing",
       "Comprehensive insurance",
       "Personal guide",
       "Ziyarah tours",
@@ -42,8 +42,8 @@ const packages = [
     ],
   },
   {
-    name: "Luxury",
-    subtitle: "Ultimate Sacred Experience",
+    name: "Luxury Umrah",
+    subtitle: "Ultimate Ramadan Experience",
     price: 3999,
     duration: "14 Days / 13 Nights",
     hotel: "5-Star Hotel",
@@ -79,16 +79,17 @@ const Packages = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
-            Our Packages
-          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold mb-6">
+            <Moon className="w-4 h-4 fill-current" />
+            <span className="text-sm font-medium">Ramadan 2025 Special Offers</span>
+          </div>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Choose Your
-            <span className="text-primary block mt-2">Perfect Package</span>
+            Ramadan Umrah
+            <span className="text-primary block mt-2">Packages</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Carefully curated packages to suit every budget. All packages include 
-            visa, flights, accommodation, and essential services.
+            Experience the blessed month of Ramadan in the Holy Lands. Our carefully curated 
+            packages ensure a spiritually enriching and comfortable journey.
           </p>
         </motion.div>
 
@@ -116,7 +117,17 @@ const Packages = () => {
                 </div>
               )}
 
-              <div className="p-8">
+              {/* Ramadan Badge */}
+              <div className={`absolute top-6 left-6 ${pkg.popular ? "" : ""}`}>
+                <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
+                  pkg.popular ? "bg-white/20 text-white" : "bg-gold/10 text-gold"
+                }`}>
+                  <Moon className="w-3 h-3" />
+                  Ramadan
+                </span>
+              </div>
+
+              <div className="p-8 pt-16">
                 {/* Package Header */}
                 <div className="mb-8">
                   <h3 className={`font-serif text-2xl font-bold ${
@@ -210,7 +221,7 @@ const Packages = () => {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground mb-4">
-            Need something different? Create your own personalized package.
+            Need something different? Create your own personalized Ramadan Umrah package.
           </p>
           <Button 
             variant="outline" 
