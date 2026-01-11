@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Shield, Heart, Globe, Award, CheckCircle, Moon } from "lucide-react";
-import madinahImage from "@/assets/madinah-mosque.jpg";
+import { Shield, Heart, Globe, Award, CheckCircle, Plane } from "lucide-react";
+import aboutImage from "@/assets/about-travel.jpg";
 
 const values = [
   {
@@ -45,16 +45,16 @@ const About = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-elevated">
               <img
-                src={madinahImage}
-                alt="Prophet's Mosque in Madinah"
+                src={aboutImage}
+                alt="Global travel experiences"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
               
-              {/* Ramadan Overlay Badge */}
+              {/* Badge Overlay */}
               <div className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full bg-gold/90 text-primary">
-                <Moon className="w-4 h-4 fill-current" />
-                <span className="text-sm font-semibold">Ramadan Special</span>
+                <Plane className="w-4 h-4" />
+                <span className="text-sm font-semibold">Global Destinations</span>
               </div>
             </div>
 
@@ -98,14 +98,14 @@ const About = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              MAP Travel & Tourism is your premier global travel partner, offering exceptional 
-              travel experiences worldwide. With over 15 years of expertise, we've helped more 
-              than 50,000 travelers explore the world. This Ramadan, we're proud to offer 
-              special Umrah packages to the Holy Lands of Makkah and Madinah.
+              MAP Travel & Tourism is your premier worldwide travel partner, offering exceptional 
+              travel experiences across the globe. With over 15 years of expertise, we've helped more 
+              than 50,000 travelers explore destinations worldwide – from exotic beach getaways to 
+              cultural city tours, business travel to family vacations.
             </p>
 
             <div className="space-y-4">
-              {["Worldwide destinations and holiday packages", "Special Ramadan Umrah services to Makkah & Madinah", "24/7 customer support across all time zones", "Transparent pricing with no hidden fees"].map((item, index) => (
+              {["100+ worldwide destinations and holiday packages", "International flights with major global airlines", "Premium hotels from budget to 5-star luxury", "24/7 customer support across all time zones"].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 20 }}

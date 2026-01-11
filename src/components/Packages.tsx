@@ -1,65 +1,63 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Star, Clock, Building2, Moon } from "lucide-react";
+import { Check, Star, Clock, MapPin, Plane, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const packages = [
   {
-    name: "Economy Umrah",
-    subtitle: "Essential Ramadan Experience",
-    price: 1299,
-    duration: "7 Days / 6 Nights",
-    hotel: "3-Star Hotel",
-    distance: "500m from Haram",
+    name: "European Explorer",
+    subtitle: "7-Country Grand Tour",
+    price: 2499,
+    duration: "14 Days",
+    destinations: "Paris, Rome, Barcelona",
+    category: "International Tour",
     popular: false,
     features: [
-      "Economy class flights",
-      "3-star accommodation",
-      "Shared transfers",
-      "Umrah visa processing",
-      "Basic travel insurance",
-      "Group guidance",
+      "7 European countries",
+      "4-star hotels included",
+      "Guided city tours",
+      "All transportation",
+      "Breakfast daily",
+      "Airport transfers",
     ],
   },
   {
-    name: "Premium Umrah",
-    subtitle: "Blessed Ramadan Journey",
-    price: 2199,
-    duration: "10 Days / 9 Nights",
-    hotel: "4-Star Hotel",
-    distance: "300m from Haram",
+    name: "Tropical Paradise",
+    subtitle: "Maldives & Bali Combo",
+    price: 3299,
+    duration: "10 Days",
+    destinations: "Maldives, Bali",
+    category: "Beach Getaway",
     popular: true,
     features: [
-      "Premium economy flights",
-      "4-star accommodation",
-      "Private transfers",
-      "Umrah visa processing",
-      "Comprehensive insurance",
-      "Personal guide",
-      "Ziyarah tours",
-      "24/7 support",
+      "Overwater villa stay",
+      "Private beach access",
+      "Spa treatments",
+      "Water activities",
+      "All meals included",
+      "Sunset cruise",
+      "Snorkeling trips",
+      "Airport VIP service",
     ],
   },
   {
-    name: "Luxury Umrah",
-    subtitle: "Ultimate Ramadan Experience",
-    price: 3999,
-    duration: "14 Days / 13 Nights",
-    hotel: "5-Star Hotel",
-    distance: "Haram View",
+    name: "Dubai Experience",
+    subtitle: "Luxury City Break",
+    price: 1899,
+    duration: "5 Days",
+    destinations: "Dubai, Abu Dhabi",
+    category: "City Break",
     popular: false,
     features: [
-      "Business class flights",
-      "5-star luxury hotel",
-      "VIP private transfers",
-      "Priority visa processing",
-      "Premium insurance",
-      "Dedicated guide",
-      "Full Ziyarah package",
-      "24/7 concierge",
-      "Special amenities",
-      "VIP Haram access",
+      "5-star hotel stay",
+      "Desert safari",
+      "Burj Khalifa visit",
+      "Dubai Mall tour",
+      "Abu Dhabi day trip",
+      "Airport transfers",
+      "Daily breakfast",
+      "City tour included",
     ],
   },
 ];
@@ -79,17 +77,17 @@ const Packages = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold mb-6">
-            <Moon className="w-4 h-4 fill-current" />
-            <span className="text-sm font-medium">Ramadan 2025 Special Offers</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+            <Plane className="w-4 h-4" />
+            <span className="text-sm font-medium">Featured Destinations</span>
           </div>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Ramadan Umrah
+            Popular Holiday
             <span className="text-primary block mt-2">Packages</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Experience the blessed month of Ramadan in the Holy Lands. Our carefully curated 
-            packages ensure a spiritually enriching and comfortable journey.
+            Discover our most loved travel packages. From tropical beaches to European adventures, 
+            find your perfect getaway at unbeatable prices.
           </p>
         </motion.div>
 
@@ -112,18 +110,18 @@ const Packages = () => {
                 <div className="absolute top-6 right-6">
                   <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gold text-primary text-xs font-bold">
                     <Star className="w-3 h-3 fill-current" />
-                    Most Popular
+                    Best Seller
                   </span>
                 </div>
               )}
 
-              {/* Ramadan Badge */}
-              <div className={`absolute top-6 left-6 ${pkg.popular ? "" : ""}`}>
+              {/* Category Badge */}
+              <div className="absolute top-6 left-6">
                 <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
-                  pkg.popular ? "bg-white/20 text-white" : "bg-gold/10 text-gold"
+                  pkg.popular ? "bg-white/20 text-white" : "bg-primary/10 text-primary"
                 }`}>
-                  <Moon className="w-3 h-3" />
-                  Ramadan
+                  <Plane className="w-3 h-3" />
+                  {pkg.category}
                 </span>
               </div>
 
@@ -174,10 +172,10 @@ const Packages = () => {
                     <span className="text-sm">{pkg.duration}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Building2 className={`w-4 h-4 ${
+                    <MapPin className={`w-4 h-4 ${
                       pkg.popular ? "text-gold" : "text-primary"
                     }`} />
-                    <span className="text-sm">{pkg.hotel}</span>
+                    <span className="text-sm truncate">{pkg.destinations}</span>
                   </div>
                 </div>
 
@@ -213,7 +211,7 @@ const Packages = () => {
           ))}
         </div>
 
-        {/* Custom Package CTA */}
+        {/* More Destinations CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -221,17 +219,29 @@ const Packages = () => {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground mb-4">
-            Need something different? Create your own personalized Ramadan Umrah package.
+            Looking for more destinations? Explore our full range of travel packages.
           </p>
-          <Button 
-            variant="outline" 
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6"
-            asChild
-          >
-            <a href="#customize">
-              Build Custom Package
-            </a>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6"
+              asChild
+            >
+              <a href="#contact">
+                <Users className="mr-2 w-4 h-4" />
+                View All Packages
+              </a>
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
+              asChild
+            >
+              <a href="#ramadan-umrah">
+                Ramadan Umrah Packages
+              </a>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>
