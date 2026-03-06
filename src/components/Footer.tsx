@@ -1,20 +1,21 @@
 import { Plane, Facebook, Instagram, Twitter, Youtube, ArrowUp, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Services", href: "#services" },
-    { name: "Packages", href: "#packages" },
-    { name: "Contact", href: "#contact" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Services", href: "/services" },
+    { name: "Packages", href: "/packages" },
+    { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "International Tours", href: "#services" },
-    { name: "Flight Booking", href: "#services" },
-    { name: "Hotel Reservations", href: "#services" },
-    { name: "Ramadan Umrah", href: "#ramadan-umrah" },
+    { name: "International Tours", href: "/services" },
+    { name: "Flight Booking", href: "/services" },
+    { name: "Hotel Reservations", href: "/services" },
+    { name: "Ramadan Umrah", href: "/umrah" },
   ],
   support: [
-    { name: "FAQs", href: "#" },
+    { name: "Customize Trip", href: "/customize" },
     { name: "Privacy Policy", href: "#" },
     { name: "Terms of Service", href: "#" },
     { name: "Refund Policy", href: "#" },
@@ -35,12 +36,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-2 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="relative w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
                 <Plane className="w-6 h-6 text-primary rotate-45" />
                 <Globe className="w-3 h-3 text-primary absolute -top-1 -right-1" />
@@ -53,7 +52,7 @@ const Footer = () => {
                   Explore The World
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm leading-relaxed">
               Your trusted global travel partner. Experience worldwide destinations with 
               expert guidance. From beach getaways to cultural expeditions, we make every journey extraordinary.
@@ -76,18 +75,14 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Columns */}
           <div>
             <h4 className="font-semibold text-lg mb-6">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
+                  <Link to={link.href} className="text-primary-foreground/70 hover:text-gold transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -98,12 +93,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
+                  <Link to={link.href} className="text-primary-foreground/70 hover:text-gold transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -114,12 +106,15 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link to={link.href} className="text-primary-foreground/70 hover:text-gold transition-colors">
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a href={link.href} className="text-primary-foreground/70 hover:text-gold transition-colors">
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -127,7 +122,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-primary-foreground/60">

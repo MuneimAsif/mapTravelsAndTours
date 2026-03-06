@@ -1,35 +1,28 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Packages from "@/components/Packages";
-import Testimonials from "@/components/Testimonials";
-import RamadanUmrahSection from "@/components/RamadanUmrahSection";
-import Contact from "@/components/Contact";
+import HomeAboutPreview from "@/components/HomeAboutPreview";
+import HomeServicesPreview from "@/components/HomeServicesPreview";
+import HomePackagesPreview from "@/components/HomePackagesPreview";
+import HomeRamadanPreview from "@/components/HomeRamadanPreview";
+import HomeTrustBanner from "@/components/HomeTrustBanner";
+import HomeCTA from "@/components/HomeCTA";
 import Footer from "@/components/Footer";
 import FlyingPlane from "@/components/FlyingPlane";
 
 const Index = () => {
   return (
     <div className="relative overflow-x-hidden">
-      {/* Flying Plane Animation */}
       <FlyingPlane />
-      
-      {/* Navigation */}
       <Navbar />
-      
-      {/* Main Content */}
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Packages />
-        <Testimonials />
-        <RamadanUmrahSection />
-        <Contact />
+        <HomeAboutPreview />
+        <HomeServicesPreview />
+        <HomePackagesPreview />
+        <HomeTrustBanner />
+        <HomeRamadanPreview />
+        <HomeCTA />
       </main>
-      
-      {/* Footer */}
       <Footer />
     </div>
   );
