@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Play, Star, Users, Calendar, ArrowRight, Globe } from "lucide-react";
+import { Play, Star, Users, Calendar, ArrowRight, Globe, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroVideo from "@/assets/hero-travel-video.mp4";
-import heroImage from "@/assets/hero-global-travel.jpg";
+import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-static.jpg";
 
 const stats = [
   { icon: Users, value: "50,000+", label: "Happy Travelers" },
@@ -13,18 +13,13 @@ const stats = [
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background Video with Fallback Image */}
+      {/* Background Static Image */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroImage}
+        <img
+          src={heroImage}
+          alt="Airplane taking off at golden hour - MAP Travel & Tourism"
           className="w-full h-full object-cover"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
       </div>
@@ -72,17 +67,17 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button className="btn-gold group" asChild>
-                <a href="#packages">
+                <Link to="/packages">
                   <Globe className="mr-2 w-4 h-4" />
-                  Explore Destinations
+                  Explore Packages
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
               <Button className="btn-outline-light group" asChild>
-                <a href="#services">
-                  <Play className="mr-2 w-5 h-5" />
-                  Our Services
-                </a>
+                <Link to="/customize">
+                  <Sparkles className="mr-2 w-5 h-5" />
+                  Customize Your Trip
+                </Link>
               </Button>
             </div>
 

@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, Star, Clock, MapPin, Plane, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const packages = [
   {
@@ -204,7 +205,7 @@ const Packages = () => {
                   }`}
                   asChild
                 >
-                  <a href="#contact">Book This Package</a>
+                  <Link to="/contact">Book This Package</Link>
                 </Button>
               </div>
             </motion.div>
@@ -227,19 +228,19 @@ const Packages = () => {
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6"
               asChild
             >
-              <a href="#contact">
+              <Link to="/customize">
                 <Users className="mr-2 w-4 h-4" />
-                View All Packages
-              </a>
+                Customize Your Package
+              </Link>
             </Button>
             <Button 
               variant="outline" 
               className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
               asChild
             >
-              <a href="#ramadan-umrah">
+              <Link to="/umrah">
                 Ramadan Umrah Packages
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>

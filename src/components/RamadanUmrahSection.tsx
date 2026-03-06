@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, Star, Clock, Building2, Moon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import kaabaImage from "@/assets/kaaba-makkah.jpg";
 import madinahImage from "@/assets/madinah-nabawi.jpg";
 
@@ -178,11 +179,11 @@ const RamadanUmrahSection = () => {
               </p>
             </div>
             <Button className="btn-gold whitespace-nowrap" asChild>
-              <a href="#contact">
+              <Link to="/contact">
                 <Moon className="mr-2 w-4 h-4" />
                 Enquire Now
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>
@@ -300,7 +301,7 @@ const RamadanUmrahSection = () => {
                   }`}
                   asChild
                 >
-                  <a href="#contact">Book This Package</a>
+                  <Link to="/contact">Book This Package</Link>
                 </Button>
               </div>
             </motion.div>
@@ -322,11 +323,11 @@ const RamadanUmrahSection = () => {
             className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
             asChild
           >
-            <a href="#contact">
+            <Link to="/contact">
               <Moon className="mr-2 w-4 h-4" />
               Request Custom Umrah Package
               <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
+            </Link>
           </Button>
         </motion.div>
       </div>
