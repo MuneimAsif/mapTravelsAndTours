@@ -179,11 +179,11 @@ const RamadanUmrahSection = () => {
               </p>
             </div>
             <Button className="btn-gold whitespace-nowrap" asChild>
-              <a href="#contact">
+              <Link to="/contact">
                 <Moon className="mr-2 w-4 h-4" />
                 Enquire Now
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>
