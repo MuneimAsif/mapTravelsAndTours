@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, Star, Clock, Building2, Moon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import kaabaImage from "@/assets/kaaba-makkah.jpg";
 import madinahImage from "@/assets/madinah-nabawi.jpg";
 
