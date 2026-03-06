@@ -228,19 +228,19 @@ const Packages = () => {
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6"
               asChild
             >
-              <a href="#contact">
+              <Link to="/customize">
                 <Users className="mr-2 w-4 h-4" />
-                View All Packages
-              </a>
+                Customize Your Package
+              </Link>
             </Button>
             <Button 
               variant="outline" 
               className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
               asChild
             >
-              <a href="#ramadan-umrah">
+              <Link to="/umrah">
                 Ramadan Umrah Packages
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>

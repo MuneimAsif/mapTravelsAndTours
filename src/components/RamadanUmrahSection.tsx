@@ -323,11 +323,11 @@ const RamadanUmrahSection = () => {
             className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
             asChild
           >
-            <a href="#contact">
+            <Link to="/contact">
               <Moon className="mr-2 w-4 h-4" />
               Request Custom Umrah Package
               <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
+            </Link>
           </Button>
         </motion.div>
       </div>

@@ -157,13 +157,13 @@ const Services = () => {
               </div>
 
               {/* Learn More Link */}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 text-primary font-medium group/link text-sm"
               >
                 <span>Learn More</span>
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
