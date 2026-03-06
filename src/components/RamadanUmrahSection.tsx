@@ -301,7 +301,7 @@ const RamadanUmrahSection = () => {
                   }`}
                   asChild
                 >
-                  <a href="#contact">Book This Package</a>
+                  <Link to="/contact">Book This Package</Link>
                 </Button>
               </div>
             </motion.div>
