@@ -1,102 +1,75 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Star, Clock, Building2, Moon, ArrowRight } from "lucide-react";
+import { Building2, Moon, ArrowRight, SmartphoneNfc, Compass, UtensilsCrossed, MapPin, CarTaxiFront } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import kaabaImage from "@/assets/kaaba-makkah.jpg";
-import madinahImage from "@/assets/madinah-nabawi.jpg";
+import kaabaImage from "@/assets/kaaba-makkah.webp";
+import madinahImage from "@/assets/madinah-nabawi.webp";
 
-const umrahPackages = [
+
+const values = [
   {
-    name: "Economy Umrah",
-    subtitle: "Essential Ramadan Experience",
-    price: 1299,
-    duration: "7 Days / 6 Nights",
-    hotel: "3-Star Hotel",
-    distance: "500m from Haram",
-    popular: false,
-    features: [
-      "Economy class flights",
-      "3-star accommodation",
-      "Shared transfers",
-      "Umrah visa processing",
-      "Basic travel insurance",
-      "Group guidance",
-    ],
+    icon: CarTaxiFront,
+    title: "Transportation",
+    description: "Stop worrying about airport, hotel or ziarah travels. Our transportation covers all & drops you at your doorstep.",
   },
   {
-    name: "Premium Umrah",
-    subtitle: "Blessed Ramadan Journey",
-    price: 2199,
-    duration: "10 Days / 9 Nights",
-    hotel: "4-Star Hotel",
-    distance: "300m from Haram",
-    popular: true,
-    features: [
-      "Premium economy flights",
-      "4-star accommodation",
-      "Private transfers",
-      "Umrah visa processing",
-      "Comprehensive insurance",
-      "Personal guide",
-      "Ziyarah tours",
-      "24/7 support",
-    ],
+    icon: SmartphoneNfc,
+    title: "SIM Packages",
+    description: "Get activated SIM packages keeping you connected with your loved ones throughout the whole journey.",
   },
   {
-    name: "Luxury Umrah",
-    subtitle: "Ultimate Ramadan Experience",
-    price: 3999,
-    duration: "14 Days / 13 Nights",
-    hotel: "5-Star Hotel",
-    distance: "Haram View",
-    popular: false,
-    features: [
-      "Business class flights",
-      "5-star luxury hotel",
-      "VIP private transfers",
-      "Priority visa processing",
-      "Premium insurance",
-      "Dedicated guide",
-      "Full Ziyarah package",
-      "24/7 concierge",
-      "Special amenities",
-      "VIP Haram access",
-    ],
+    icon: MapPin,
+    title: "Ziaraah Tours",
+    description: "Visit Jabal-e-Noor, Jabal-e-Uhud, Baqi, Wadie-e-Jinn and whereever you want to go in Makkah and Madinah.",
+  },
+  {
+    icon: Compass,
+    title: "Tour Guides",
+    description: "Visiting just sites isn't enough. Build connection with them with explained history by our expert tour guides.",
+  },
+  {
+    icon: Building2,
+    title: "Nearby Hotels",
+    description: "Stay just a few steps away from the Haram and experience the spiritual vibes of Makkah and Madinah 24/7.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Meals & Dining",
+    description: "Enjoy delicious meals with us. We offer a variety of dining options to suit your taste and dietary needs.",
   },
 ];
-
 const RamadanUmrahSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="ramadan-umrah" className="section-padding bg-gradient-to-b from-primary/5 to-background relative overflow-hidden">
+    <section id="ramadan-umrah" className="bg-gradient-to-b from-gold/10 to-background relative overflow-hidden -mt-8 py-10">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
-      
+
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 text-gold border border-gold/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 text-gold border border-gold/30 mb-6 shadow-gold">
             <Moon className="w-5 h-5 fill-current" />
-            <span className="font-semibold">Ramadan Special 2025</span>
+            <span className="font-semibold">Umrah Special</span>
           </div>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Ramadan Umrah &
-            <span className="text-primary block mt-2">Madinah Tours</span>
+            Welcome To The
+            <span className="text-primary block mt-2">Spiritual World</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Experience the blessed month of Ramadan in the Holy Lands. Our carefully curated 
-            packages ensure a spiritually enriching and comfortable journey to Makkah and Madinah.
+          <p className=" text-muted-foreground mb-5 leading-relaxed text-lg">
+            Is your heart still waiting to feel the blessed winds of Makkah and Madinah? This can be a sign.
+            Don't miss the chance! Pack your bags - the Holy lands are calling you.
           </p>
         </motion.div>
 
@@ -105,8 +78,8 @@ const RamadanUmrahSection = () => {
           {/* Kaaba - Makkah */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="relative rounded-3xl overflow-hidden group"
           >
             <img
@@ -122,10 +95,10 @@ const RamadanUmrahSection = () => {
                   <span className="text-sm font-medium">Holy Makkah</span>
                 </div>
                 <h3 className="font-serif text-2xl md:text-3xl font-bold mb-2">
-                  The Sacred Kaaba
+                  Haram-e-Kaaba
                 </h3>
                 <p className="text-white/80 text-sm md:text-base">
-                  Perform Tawaf around the House of Allah during the blessed month of Ramadan.
+                  Perform Tawaf around the House of Allah عزّوجل and exprience the spiritual energy of it.
                 </p>
               </div>
             </div>
@@ -134,8 +107,8 @@ const RamadanUmrahSection = () => {
           {/* Masjid-e-Nabawi - Madinah */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="relative rounded-3xl overflow-hidden group"
           >
             <img
@@ -151,22 +124,53 @@ const RamadanUmrahSection = () => {
                   <span className="text-sm font-medium">Holy Madinah</span>
                 </div>
                 <h3 className="font-serif text-2xl md:text-3xl font-bold mb-2">
-                  Prophet's Mosque
+                  Haram-e-Taiba
                 </h3>
                 <p className="text-white/80 text-sm md:text-base">
-                  Visit the peaceful Masjid-e-Nabawi and offer prayers at Riyad-ul-Jannah.
+                  Stand before Prophet Muhammad ﷺ and seek his intercession in his blessed city.
                 </p>
               </div>
             </div>
           </motion.div>
         </div>
 
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative"
+        >
+          <p className="text-center text-gold font-semibold uppercase tracking-wider text-sm mb-10">
+            Umrah Values
+          </p>
+        </motion.div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 pt-6">
+          {values.map((value, index) => (
+            <motion.div
+              key={value.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+              className="group text-center flex flex-col items-center py-5 rounded-xl card-premium hover:border-gold/30 ring-2 ring-gold/50 bg-gold/5">
+              <value.icon className="w-8 h-8 text-gold mb-3 group-hover:scale-110 transition-transform" />
+              <h4 className="font-semibold text-foreground">
+                {value.title}
+              </h4>
+              <p className="w-[99%] text-muted-foreground mt-3 leading-relaxed text-sm">
+                {value.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+
         {/* CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative rounded-2xl overflow-hidden mb-16 bg-gradient-to-r from-primary via-primary/95 to-primary p-8 md:p-10"
+          className="relative rounded-2xl overflow-hidden mt-20 bg-gradient-to-r from-primary via-primary/95 to-primary p-8 md:p-10"
         >
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -175,138 +179,18 @@ const RamadanUmrahSection = () => {
                 Blessed Journey Awaits
               </h3>
               <p className="text-white/80">
-                Join thousands of pilgrims this Ramadan for a transformative spiritual experience.
+                It's your turn. Patience is over. One step more and you are in front of the most blessed places on the planet.
               </p>
             </div>
             <Button className="btn-gold whitespace-nowrap" asChild>
               <Link to="/contact">
                 <Moon className="mr-2 w-4 h-4" />
-                Enquire Now
+                Book your slot
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>
         </motion.div>
-
-        {/* Packages Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {umrahPackages.map((pkg, index) => (
-            <motion.div
-              key={pkg.name}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-              className={`relative rounded-3xl overflow-hidden ${
-                pkg.popular
-                  ? "bg-primary text-primary-foreground scale-105 shadow-elevated"
-                  : "bg-card border border-border shadow-card"
-              }`}
-            >
-              {/* Popular Badge */}
-              {pkg.popular && (
-                <div className="absolute top-6 right-6">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gold text-primary text-xs font-bold">
-                    <Star className="w-3 h-3 fill-current" />
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              {/* Ramadan Badge */}
-              <div className="absolute top-6 left-6">
-                <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
-                  pkg.popular ? "bg-white/20 text-white" : "bg-gold/10 text-gold"
-                }`}>
-                  <Moon className="w-3 h-3" />
-                  Ramadan
-                </span>
-              </div>
-
-              <div className="p-8 pt-16">
-                {/* Package Header */}
-                <div className="mb-8">
-                  <h3 className={`font-serif text-2xl font-bold ${
-                    pkg.popular ? "text-primary-foreground" : "text-foreground"
-                  }`}>
-                    {pkg.name}
-                  </h3>
-                  <p className={`text-sm mt-1 ${
-                    pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
-                  }`}>
-                    {pkg.subtitle}
-                  </p>
-                </div>
-
-                {/* Price */}
-                <div className="mb-8">
-                  <div className="flex items-baseline gap-1">
-                    <span className={`text-sm ${
-                      pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
-                    }`}>
-                      From
-                    </span>
-                    <span className={`font-serif text-5xl font-bold ${
-                      pkg.popular ? "text-gold" : "text-foreground"
-                    }`}>
-                      ${pkg.price}
-                    </span>
-                  </div>
-                  <p className={`text-sm mt-2 ${
-                    pkg.popular ? "text-primary-foreground/70" : "text-muted-foreground"
-                  }`}>
-                    per person
-                  </p>
-                </div>
-
-                {/* Quick Info */}
-                <div className={`grid grid-cols-2 gap-4 mb-8 p-4 rounded-xl ${
-                  pkg.popular ? "bg-white/10" : "bg-secondary/50"
-                }`}>
-                  <div className="flex items-center gap-2">
-                    <Clock className={`w-4 h-4 ${
-                      pkg.popular ? "text-gold" : "text-primary"
-                    }`} />
-                    <span className="text-sm">{pkg.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Building2 className={`w-4 h-4 ${
-                      pkg.popular ? "text-gold" : "text-primary"
-                    }`} />
-                    <span className="text-sm">{pkg.hotel}</span>
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 mb-8">
-                  {pkg.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <Check className={`w-5 h-5 flex-shrink-0 ${
-                        pkg.popular ? "text-gold" : "text-gold"
-                      }`} />
-                      <span className={`text-sm ${
-                        pkg.popular ? "text-primary-foreground/90" : "text-foreground"
-                      }`}>
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
-                <Button
-                  className={`w-full py-6 font-semibold text-base ${
-                    pkg.popular
-                      ? "btn-gold"
-                      : "bg-primary text-primary-foreground hover:bg-primary/90"
-                  }`}
-                  asChild
-                >
-                  <Link to="/contact">Book This Package</Link>
-                </Button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Custom Package CTA */}
         <motion.div
@@ -318,12 +202,12 @@ const RamadanUmrahSection = () => {
           <p className="text-muted-foreground mb-4">
             Need a customized Umrah package? Let us create your perfect spiritual journey.
           </p>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
             asChild
           >
-            <Link to="/contact">
+            <Link to="/customize">
               <Moon className="mr-2 w-4 h-4" />
               Request Custom Umrah Package
               <ArrowRight className="ml-2 w-4 h-4" />

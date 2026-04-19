@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
-import { Play, Star, Users, Calendar, ArrowRight, Globe, Sparkles } from "lucide-react";
+import { Globe, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-static.jpg";
+import heroImage from "@/assets/hero-static.webp";
+import moin from "@/assets/Moin.webp";
+import mukarram from "@/assets/Mukarram.webp";
+import farooq from "@/assets/Farooq.webp";
+import sufiyan from "@/assets/Sufiyan.webp";
 
-const stats = [
-  { icon: Users, value: "50,000+", label: "Happy Travelers" },
-  { icon: Star, value: "4.9/5", label: "Customer Rating" },
-  { icon: Calendar, value: "15+", label: "Years Experience" },
-];
-
+const arr = [mukarram, moin, farooq, sufiyan];
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className="relative min-h-screen md:h-[750px] lg:h-[800px] overflow-hidden">
       {/* Background Static Image */}
       <div className="absolute inset-0">
         <img
@@ -27,7 +26,7 @@ const Hero = () => {
       {/* Decorative Elements */}
       <div className="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
       <div className="absolute bottom-1/4 left-10 w-96 h-96 rounded-full bg-sky/10 blur-3xl" />
-      
+
       {/* Globe Decoration */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
@@ -39,98 +38,52 @@ const Hero = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom min-h-screen flex items-center pt-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          {/* Left Content */}
+      <div className="relative z-10 container-custom min-h-screen lg:h-[750px] 2xl:h-[800px] flex items-center pt-10">
+        <div className="gap-12 items-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white space-y-8"
+            className="text-white space-y-9 flex flex-col items-center min-[1024px]:mb-5 min-[1024px]:-mt-5"
           >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/30">
-              <Globe className="w-4 h-4 text-gold" />
-              <span className="text-sm font-medium text-gold">Your Gateway to the World</span>
-            </div>
-
-            <h1 className="font-serif text-5xl lg:text-7xl font-bold leading-tight">
+            <h1 className="font-serif text-6xl md:mt-20 sm:text-7xl md:text-8xl lg:text-8xl 2xl:text-9xl xl:-mt-5 2xl:-mt-5 font-bold text-center max-[330px]:mt-5 max-[360px]:text-[46px] max-[420px]:text-[52px] max-[420px]:whitespace-nowrap max-[420px]:text-ellipsis">
               Explore The
-              <span className="block text-gold mt-2">World With Us</span>
+              <span className="block text-gold mt-2">World Now</span>
             </h1>
 
-            <p className="text-lg text-white/80 max-w-lg leading-relaxed">
-              MAP Travel & Tourism is your premier global travel partner. From exotic beaches 
-              to iconic landmarks, business trips to family adventures – we make every journey 
-              extraordinary.
+            <p className="text-md md:text-xl lg:text-xl 2xl:text-2xl text-white/80 max-w-[530px] sm:max-w-[560px] md:max-w-2xl lg:max-w-2xl xl:max-w-2xl 2xl:max-w-2xl max-[420px]:text-[16px] max-[420px]:max-w-[500px] max-[420px]:ms-3 max-[360px]:ms-1 leading-relaxed text-center">
+              Our expert travel agency provide stress-free visa processing & other all travel documentation so you can travel with comfort and trust.
             </p>
+            {/* <p className="text-md md:text-xl lg:text-xl 2xl:text-2xl text-white/80 w-[80%] text-center">
+              Our expert travel agency provide stress-free visa processing & other all travel documentation so you can travel with comfort and trust.
+            </p> */}
 
             <div className="flex flex-wrap gap-4">
-              <Button className="btn-gold group" asChild>
-                <Link to="/packages">
-                  <Globe className="mr-2 w-4 h-4" />
-                  Explore Packages
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button className="btn-outline-light group" asChild>
+              <Button className="btn-gold group max-[420px]:text-[13px]" asChild>
                 <Link to="/customize">
-                  <Sparkles className="mr-2 w-5 h-5" />
-                  Customize Your Trip
+                  <Sparkles className="mr-1 w-7 h-5" />
+                  Customize Your Package
                 </Link>
               </Button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-6 pt-6">
+            <div className="flex items-center gap-6 pt-6 min-[1024px]:pt-0">
+              <p className="text-sm text-white/70 max-[400px]:-me-3 max-[400px]:text-[13px]">
+                <span className="text-white font-semibold">Trusted by</span>
+              </p>
               <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
+                {arr.map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-sky to-navy flex items-center justify-center text-xs font-bold text-white"
+                    className="relative w-10 h-10 max-[400px]:w-8 max-[400px]:h-8 rounded-full border bg-gradient-to-br from-sky to-navy flex items-center justify-center text-xs font-bold text-white overflow-hidden border-white/50"
                   >
-                    {String.fromCharCode(64 + i)}
+                    {i ? <img src={i} alt="sufiyan" className="absolute inset-0 w-38 h-38 lazy-load object-cover" /> : null}
+                    {/* {String.fromCharCode(64 + i)} */}
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-white/70">
-                <span className="text-white font-semibold">500+</span> travelers this month
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right Content - Stats Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:block"
-          >
-            <div className="relative">
-              {/* Floating Stats */}
-              <div className="space-y-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
-                    className={`glass rounded-2xl p-6 max-w-sm ${
-                      index === 1 ? "ml-auto" : index === 2 ? "ml-12" : ""
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold">
-                        <stat.icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-3xl font-bold text-primary">{stat.value}</p>
-                        <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <p className="text-sm text-white/70 max-[400px]:-ms-3 max-[400px]:text-[13px]">and more ...</p>
             </div>
           </motion.div>
         </div>

@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Shield, Heart, Globe, Award, ArrowRight } from "lucide-react";
+import { Shield, Heart, Globe, ArrowRight, HandHeart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const values = [
   { icon: Globe, title: "Global Reach", description: "Worldwide destinations with local expertise" },
-  { icon: Heart, title: "Personalized Care", description: "Dedicated support throughout your journey" },
-  { icon: Shield, title: "Trust & Reliability", description: "Licensed and certified travel experts" },
-  { icon: Award, title: "Best Value", description: "Competitive prices with premium quality" },
+  { icon: Shield, title: "Trust & Reliability", description: "There isn't any hidden fee, no surprises" },
+  { icon: HandHeart, title: "Your Safety", description: "24/7 hours available for your safety" },
+  { icon: Heart, title: "Personalized Care", description: "You are unique, like every traveler" },
 ];
 
 const HomeAboutPreview = () => {
@@ -26,16 +26,15 @@ const HomeAboutPreview = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
-            About MAP Travel & Tourism
+       <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">
+            Our Values
           </p>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Your Global Partner for
-            <span className="text-primary block mt-2">Unforgettable Journeys</span>
+            Global Travel Partner
+            <span className="text-primary block mt-2">for Dream Journeys</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            With over 15 years of expertise and 50,000+ happy travelers, we deliver exceptional 
-            travel experiences across 100+ worldwide destinations.
+            From personalized trip planning to 24/7 travel support, sit back, relax, let us handle everything & enjoy your trip with peace.
           </p>
         </motion.div>
 

@@ -20,26 +20,26 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+966 50 000 0000",
+    value: "+92 321 827 3577",
     description: "Available 24/7",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@maptravel.com",
-    description: "Response within 24 hours",
+    value: "info.map@gmail.com",
+    description: "Response within 2 hours",
   },
   {
     icon: MapPin,
     title: "Office",
-    value: "Riyadh, Saudi Arabia",
+    value: "Karachi, Pakistan",
     description: "Visit by appointment",
   },
   {
     icon: Clock,
     title: "Hours",
-    value: "24/7 Support",
-    description: "Always available",
+    value: "09:00 am - 06:00 pm",
+    description: "Mon - Sat",
   },
 ];
 
@@ -56,6 +56,20 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const phoneNumber = "923218273577";
+
+    // 2. Message Format
+    const message = `*New Trip Request*%0A` +
+      `*Name:* ${formData.name}%0A` +
+      `*Email:* ${formData.email}%0A` +
+      `*Phone:* ${formData.phone}%0A` +
+      `*Message:* ${formData.message}%0A`
+
+    // 3. WhatsApp URL 
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // 4. Open In A New Tab 
+    window.open(whatsappURL, "_blank");
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
@@ -85,11 +99,10 @@ const Contact = () => {
               </p>
               <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Start Your Journey
-                <span className="text-primary block mt-2">With MAP Travel</span>
+                <span className="text-primary block mt-2">With Our Agency </span>
               </h2>
               <p className="text-lg text-muted-foreground">
-                Ready to explore the world? Whether you're planning a vacation, business trip, 
-                or special getaway, our team is here to assist you every step of the way.
+                Ready to explore the world? Whether you're planning a vacation, business trip, or special getaway, we are here to assist you every step of the way.
               </p>
             </div>
 
@@ -118,7 +131,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <a
-                href="https://wa.me/966500000000"
+                href="https://wa.me/923218273577?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition-transform shadow-lg"

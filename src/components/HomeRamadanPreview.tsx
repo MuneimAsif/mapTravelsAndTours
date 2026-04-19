@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { Moon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import kaabaImage from "@/assets/kaaba-makkah.jpg";
-import madinahImage from "@/assets/madinah-nabawi.jpg";
+import kaabaImage from "@/assets/kaaba-makkah.webp";
+import madinahImage from "@/assets/madinah-nabawi.webp";
 
 const HomeRamadanPreview = () => {
   const ref = useRef(null);
@@ -25,14 +25,14 @@ const HomeRamadanPreview = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 text-gold border border-gold/30 mb-6">
             <Moon className="w-5 h-5 fill-current" />
-            <span className="font-semibold">Ramadan Special 2025</span>
+            <span className="font-semibold">Umrah Special</span>
           </div>
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Ramadan Umrah &
+            Sacred Makkah &
             <span className="text-primary block mt-2">Madinah Tours</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Experience the blessed month in the Holy Lands with our carefully curated packages.
+            Answer the call of faith and explore the Holy Lands with our perfectly planned, soul-enriching travel packages.
           </p>
         </motion.div>
 
@@ -47,7 +47,7 @@ const HomeRamadanPreview = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="font-serif text-2xl font-bold text-white mb-1">Holy Makkah</h3>
-              <p className="text-white/80 text-sm">Sacred Kaaba & Tawaf during Ramadan</p>
+              <p className="text-white/80 text-sm">Sacred Kaaba & Spritual Tawaf</p>
             </div>
           </motion.div>
 
@@ -75,7 +75,7 @@ const HomeRamadanPreview = () => {
           <Button className="btn-gold group" asChild>
             <Link to="/umrah">
               <Moon className="mr-2 w-4 h-4" />
-              View Umrah Packages
+              View details
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

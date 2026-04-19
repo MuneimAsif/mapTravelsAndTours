@@ -27,23 +27,27 @@ const HomeCTA = () => {
               Ready to Explore the World?
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Build your perfect travel package or talk to a travel expert. 
-              Your dream vacation is just one step away.
+              Build your own perfect travel package or talk to a travel expert. 
+              Your dream journey is just one step away.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="btn-gold group" asChild>
                 <Link to="/customize">
-                  <Sparkles className="mr-2 w-4 h-4" />
-                  Build Your Perfect Package
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Sparkles className="mr-1 w-4 h-4" />
+                  Build your Package
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button className="btn-outline-light" asChild>
-                <Link to="/contact">
-                  <Phone className="mr-2 w-4 h-4" />
-                  Talk to a Travel Expert
-                </Link>
-              </Button>
+              <Button className="btn-outline-light">
+            <a
+              href="tel:+92321273577"
+              className={`flex items-center gap-2 text-sm font-medium}`}
+            >
+              <Phone className="w-4 h-4" />
+              <span>Talk to a Travel Expert</span>
+            </a>
+          </Button>
+    
             </div>
           </div>
         </motion.div>
