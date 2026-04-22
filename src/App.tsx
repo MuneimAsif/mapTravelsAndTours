@@ -5,18 +5,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Index from "./pages/Index";
+const Index = lazy(() => import("./pages/Index"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const PackagesPage = lazy(() => import("./pages/PackagesPage"));
 const UmrahPage = lazy(() => import("./pages/UmrahPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const CustomizePage = lazy(() => import("./pages/CustomizePage"));
-import NotFound from "./pages/NotFound";
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-// Scroll to top on route change
+// Scroll to top on route change'
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -30,7 +30,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/mapTravelsAndTours/">
         <ScrollToTop />
         <Suspense fallback={
           <div style={{
