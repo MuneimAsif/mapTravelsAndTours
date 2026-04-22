@@ -156,7 +156,7 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <Button className="btn-gold mt-4" asChild>
-                <Link to="/packages" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Book Now
                 </Link>
               </Button>
