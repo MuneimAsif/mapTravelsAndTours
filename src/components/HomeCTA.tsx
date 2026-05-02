@@ -10,7 +10,7 @@ const HomeCTA = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="section-padding bg-background">
+    <section className="bg-background mb-20">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -40,7 +40,7 @@ const HomeCTA = () => {
               </Button>
               <Button className="btn-outline-light">
             <a
-              href="tel:+92321273577"
+              href="tel:+923218273577"
               className={`flex items-center gap-2 text-sm font-medium}`}
             >
               <Phone className="w-4 h-4" />

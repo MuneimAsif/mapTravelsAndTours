@@ -18,23 +18,23 @@ import { useNavigate } from "react-router-dom";
 const values = [
   {
     icon: ShieldCheck,
-    title: "Transparency",
-    description: "No hidden fee surprises",
+    title: "Seamless Travel Planning",
+    description: "Making every journey simple from start to finish",
   },
   {
     icon: Handshake,
-    title: "Reliability",
-    description: "We are with you at every step",
+    title: "Global Accessibility",
+    description: "Connecting people to destinations around the world",
   },
   {
     icon: Heart,
-    title: "Genuine Care",
-    description: "Customers are the part of our family",
+    title: "Personalized Experiences",
+    description: "Designing trips based on individual preferences",
   },
   {
     icon: Sparkles,
-    title: "Peach of Mind",
-    description: "Travel anywhere stress-free always",
+    title: "Affordable Exploration",
+    description: "Enabling travel opportunities for every budget",
   },
 ];
 
@@ -80,8 +80,8 @@ const About = () => {
               className="text-4xl lg:text-5xl font-bold text-white leading-tight"
               style={{ fontSize: "clamp(2.4rem,5vw,4rem)" }}
             >
-              Your Trusted Partner For
-              <br /> Unforgettable Journeys
+             A Trusted Travel Agency
+              <br />  For Customized Trips
             </h1>
           </div>
         </section>
@@ -151,9 +151,8 @@ const About = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I started this agency, trust was not an option on the list.
-              It was the very first brick I laid and everything else was built
-              on top of it. Our mission includes:
+              When we started, trust was not an option on the list.
+              It was the very first brick which laided as foundation and everything else was built on the top of it. Our mission includes:
             </p>
 
             {/* Values Grid */}

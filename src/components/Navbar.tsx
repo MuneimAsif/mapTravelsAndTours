@@ -95,7 +95,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4 max-[1100px]:gap-2">
             <a
-              href="tel:+92321273577"
+              href="tel:+923218273577"
               className={`flex items-center gap-2 text-sm font-medium transition-colors ${showScrolledStyle ? "text-foreground" : "text-white"
                 }`}
             >
@@ -113,7 +113,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-          aria-label="Open Mobile Menu"
+            aria-label="Open Mobile Menu"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${showScrolledStyle ? "text-foreground" : "text-white"
               }`}

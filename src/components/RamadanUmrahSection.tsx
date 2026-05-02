@@ -204,13 +204,13 @@ const RamadanUmrahSection = () => {
           </p>
           <Button
             variant="outline"
-            className="border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6"
+            className=" border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6 mx-auto max-[400px]:px-4 max-[360px]:text-[14px] max-[360px]:px-2"
             asChild
           >
             <Link to="/customize">
-              <Moon className="mr-2 w-4 h-4" />
-              Request Custom Umrah Package
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <Moon className="mr-1 w-4 h-4 max-[350px]:hidden" />
+              <p className="ms-1">Request Custom Umrah Package</p>
+              <ArrowRight className="ml-1 w-4 h-4 max-[360px]:ml-0" />
             </Link>
           </Button>
         </motion.div>

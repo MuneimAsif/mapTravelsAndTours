@@ -18,7 +18,7 @@ const Index = () => {
         <Hero />
         <HomeAboutPreview />
         <HomeServicesPreview />
-        <HomePackagesPreview />
+        {/* <HomePackagesPreview /> */}
         <HomeTrustBanner />
         <HomeRamadanPreview />
         <HomeCTA />

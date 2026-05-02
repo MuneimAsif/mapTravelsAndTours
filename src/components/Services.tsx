@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   FileText,
   Plane,
@@ -160,6 +160,22 @@ const packages = [
 const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [isWidthGreater400, setIsWidthGreater400] = useState(false);
+  const ctaDivRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const divElement = ctaDivRef.current;
+    if (!divElement) return;
+    // Initial check
+    setIsWidthGreater400(divElement.offsetWidth > 400);
+    const resizeObserver = new ResizeObserver(() => {
+      setIsWidthGreater400(divElement.offsetWidth > 400);
+    });
+
+    resizeObserver.observe(divElement);
+
+    return () => resizeObserver.disconnect();
+  }, []);
 
   return (
 
@@ -250,7 +266,7 @@ const Services = () => {
             Tours We Provide
           </p>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {packages.map((pack, index) => (
             <motion.div
               key={pack.title}
@@ -293,7 +309,7 @@ const Services = () => {
                   {pack.features.map((feature) => (
                     <span
                       key={feature}
-                      className={pack.featured ? "px-2 py-1 overflow-hidden whitespace-nowrap bg-secondary rounded-full text-xs font-medium text-foreground" : pack.topFeatured ? "px-2 py-1 overflow-hidden whitespace-nowrap bg-gold rounded-full text-xs font-medium text-white/80" : "px-2 py-1 overflow-hidden whitespace-nowrap bg-secondary rounded-full text-xs font-medium text-foreground"}
+                      className={pack.featured ? "px-2 py-1 overflow-hidden whitespace-nowrap   bg-secondary rounded-full text-xs font-medium text-foreground" : pack.topFeatured ? "px-2 py-1 overflow-hidden whitespace-nowrap bg-gold rounded-full text-xs font-medium text-white/80" : "px-2 py-1 overflow-hidden whitespace-nowrap bg-secondary rounded-full text-xs font-medium text-foreground"}
                     >
                       {feature}
                     </span>
@@ -304,19 +320,21 @@ const Services = () => {
           ))}
         </div>
         {/* CTA */}
-        <section className="section-padding bg-background">
-          <div className="container-custom">
+        <section className="bg-background">
+          <div
+            ref={ctaDivRef}
+            className={isWidthGreater400 ? "container-custom" : ""}
+          >
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary via-primary/95 to-primary p-12 md:p-16  text-center"
+              className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary via-primary/95 to-primary p-12 max-[400px]:px-8 max-[400px]:py-10 md:p-16 text-center"
             >
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gold/10 blur-3xl" />
               <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-sky/5 blur-3xl" />
-
-              <div className="relative z-10 max-w-2xl mx-auto">
+              <div className="relative z-10 max-w-3xl mx-auto">
                 <h2 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-6">
                   Need A Custom Solution?
                 </h2>
@@ -326,21 +344,20 @@ const Services = () => {
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button className="btn-gold group" asChild>
                     <Link to="/customize">
-                      <Sparkles className="mr-1 w-4 h-4" />
+                      {/* <Sparkles className="mr-1 w-4 h-4" /> */}
                       Customize Package
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                   <Button className="btn-outline-light" asChild>
-                    <a
-                      href="tel:+92321273577"
+                    <a      
+                      href="tel:+923218273577"
                       className={`flex items-center gap-2 text-sm font-medium}`}
                     >
                       <Phone className="w-4 h-4" />
                       <span>Talk With Specialist</span>
                     </a>
                   </Button>
-<s>                        </s>
                 </div>
               </div>
             </motion.div>

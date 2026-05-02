@@ -113,7 +113,7 @@ const CustomizePage = () => {
             </div>
           </motion.div>
 
-          <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-12">
+          <form onSubmit={handleSubmit} className="max-w-4xl mx-auto max-[940px]:mx-3 space-y-12">
             {/* Step 1: Destination */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -121,7 +121,7 @@ const CustomizePage = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
-                <span className="text-gold mr-2">1.</span> Where do you want to go?
+                <span className="text-gold ms-2">1.</span> Where do you want to go?
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {destinations.map((dest) => (
@@ -148,7 +148,7 @@ const CustomizePage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
-                <span className="text-gold mr-2">2.</span> What type of trip?
+                <span className="text-gold ms-2">2.</span> What type of trip?
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {travelTypes.map((type) => (
@@ -175,7 +175,7 @@ const CustomizePage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
-                <span className="text-gold mr-2">3.</span> Trip details
+                <span className="text-gold ms-2">3.</span> Trip details
               </h3>
               <div className="card-premium space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -220,7 +220,7 @@ const CustomizePage = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center"
             >
-              <Button type="submit" className="btn-gold group px-12 py-6 text-lg">
+              <Button type="submit" className="btn-gold group mx-auto px-12 py-6 text-lg max-[350px]:text-[16px] max-[400px]:px-7">
                 <span>Submit Your Trip Request</span>
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
