@@ -17,19 +17,19 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const queryClient = new QueryClient();
 
 // Handle redirect from 404.html for GitHub Pages
-const HandleRedirect = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const redirect = sessionStorage.redirect;
-    if (redirect) {
-      delete sessionStorage.redirect;
-      // Remove the basename from the stored path
-      const path = redirect.replace(/^\/mapTravelsAndTours/, '') || '/';
-      navigate(path);
-    }
-  }, [navigate]);
-  return null;
-};
+// const HandleRedirect = () => {
+//   const navigate = useNavigate();
+//   useEffect(() => {
+//     const redirect = sessionStorage.redirect;
+//     if (redirect) {
+//       delete sessionStorage.redirect;
+//       // Remove the basename from the stored path
+//       const path = redirect.replace(/^\/mapTravelsAndTours/, '') || '/';
+//       navigate(path);
+//     }
+//   }, [navigate]);
+//   return null;
+// };
 
 // Scroll to top on route change'
 const ScrollToTop = () => {
@@ -46,7 +46,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename="/mapTravelsAndTours/">
-        <HandleRedirect />
+        {/* <HandleRedirect /> */}
         <ScrollToTop />
         <Suspense fallback={
           <div style={{
