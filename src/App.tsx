@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, HashRouter } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const Index = lazy(() => import("./pages/Index"));
@@ -16,20 +16,21 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-const HandleRedirect = () => {
-  const navigate = useNavigate();
+// const HandleRedirect = () => {
+//   const navigate = useNavigate();
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const path = params.get("p");
+//   useEffect(() => {
+//     const params = new URLSearchParams(window.location.search);
+//     const path = params.get("p");
 
-    if (path) {
-      navigate(path);
-    }
-  }, []);
+//     if (path) {
+//       navigate(path);
+//     }
+//   }, []);
 
-  return null;
-};
+//   return null;
+// };
+
 // Scroll to top on route change'
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -44,8 +45,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/mapTravelsAndTours/">
-        <HandleRedirect />
+      <BrowserRouter>
+        {/* <HandleRedirect /> */}
+        {/* <HashRouter> */}
         <ScrollToTop />
         <Suspense fallback={
           <div style={{
@@ -69,6 +71,7 @@ const App = () => (
           </Routes>
         </Suspense>
       </BrowserRouter>
+            {/* </HashRouter> */}
     </TooltipProvider>
   </QueryClientProvider>
 );

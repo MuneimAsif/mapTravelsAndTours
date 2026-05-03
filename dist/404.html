@@ -1,22 +1,44 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Store the path that was requested so React Router can redirect to it
+        // Debug: Log that 404.html is being served
+        console.log('404.html loaded');
+        
         const pathname = window.location.pathname;
         const search = window.location.search;
+        const fullPath = pathname + search;
         
-        // Store the full path in sessionStorage
-        sessionStorage.redirect = pathname + search;
+        console.log('Full path:', fullPath);
         
-        // Redirect to home - use location.href for more reliable redirect
+        // Store the path that was requested so React Router can redirect to it
+        sessionStorage.redirect = fullPath;
+        console.log('Stored redirect:', sessionStorage.redirect);
+        
+        // Redirect to home page
         window.location.href = '/mapTravelsAndTours/';
+        console.log('Redirecting to /mapTravelsAndTours/');
     </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to homepage...</p>
 </body>
+</html> -->
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        // GitHub Pages SPA redirect fix
+        var path = window.location.pathname;
+        var repo = "/mapTravelsAndTours";
+        window.location.replace(repo + "/?p=" + path.replace(repo, ""));
+    </script>
+</head>
+
 </html>
