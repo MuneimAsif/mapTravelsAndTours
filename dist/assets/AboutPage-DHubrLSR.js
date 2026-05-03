@@ -1,4 +1,4 @@
-import{c as i,r as l,u as d,j as e}from"./index-DhXjvL2p.js";import{u as c,m as a,B as m,F as p,N as x,b as h}from"./FlyingPlane-GP6gIBqY.js";import{H as u}from"./heart-BP1WrrjD.js";import{S as g}from"./sparkles-BFGUpfTn.js";import{A as y}from"./arrow-right-CPTjJou7.js";/**
+import{c as i,r as l,u as d,j as e}from"./index-BC6WQxS8.js";import{u as c,m as a,B as m,F as p,N as x,b as h}from"./FlyingPlane-nrr5c318.js";import{H as u}from"./heart-Cm_ha0uN.js";import{S as g}from"./sparkles-Dy6Qa0mX.js";import{A as y}from"./arrow-right-CYjaHCIe.js";/**
  * @license lucide-react v0.462.0 - ISC
  *
  * This source code is licensed under the ISC license.
