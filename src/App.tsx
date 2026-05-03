@@ -16,24 +16,20 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-// Handle redirect from 404.html for GitHub Pages
 const HandleRedirect = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
-    const redirect = sessionStorage.redirect;
-    if (redirect) {
-      delete sessionStorage.redirect;
-      // Remove the basename from the stored path
-      const path = redirect.replace(/^\/mapTravelsAndTours/, '') || '/';
-      // Use setTimeout to ensure router is fully ready
-      setTimeout(() => {
-        navigate(path);
-      }, 0);
+    const params = new URLSearchParams(window.location.search);
+    const path = params.get("p");
+
+    if (path) {
+      navigate(path);
     }
-  }, [navigate]);
+  }, []);
+
   return null;
 };
-
 // Scroll to top on route change'
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -63,12 +59,12 @@ const App = () => (
         }>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/packages" element={<PackagesPage />} />
-            <Route path="/umrah" element={<UmrahPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/customize" element={<CustomizePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="packages" element={<PackagesPage />} />
+            <Route path="umrah" element={<UmrahPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="customize" element={<CustomizePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
