@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -151,20 +152,44 @@ const CustomizePage = () => {
                 <span className="text-gold ms-2">2.</span> What type of trip?
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {travelTypes.map((type) => (
-                  <button
-                    key={type.name}
-                    type="button"
-                    onClick={() => setSelectedType(type.name)}
-                    className={`p-5 rounded-2xl border-2 transition-all duration-300 flex items-center gap-3 ${selectedType === type.name
-                      ? "border-primary bg-primary/5 shadow-card"
-                      : "border-border hover:border-primary/30 bg-card"
-                      }`}
-                  >
-                    <type.icon className={`w-6 h-6 ${selectedType === type.name ? "text-primary" : "text-muted-foreground"}`} />
-                    <span className="font-semibold text-foreground">{type.name}</span>
-                  </button>
-                ))}
+                <TooltipProvider>
+                  {travelTypes.map((type) => {
+                    const isUmrahDisabled = type.name === "Umrah" && selectedDestination !== "Middle East";
+                    const button = (
+                      <button
+                        key={type.name}
+                        type="button"
+                        onClick={() => !isUmrahDisabled && setSelectedType(type.name)}
+                        disabled={isUmrahDisabled}
+                        className={`p-5 rounded-2xl border-2 transition-all duration-300 flex items-center gap-3 ${
+                          isUmrahDisabled
+                            ? "border-border/50 bg-card/50 opacity-50 cursor-not-allowed"
+                            : selectedType === type.name
+                            ? "border-primary bg-primary/5 shadow-card"
+                            : "border-border hover:border-primary/30 bg-card"
+                        }`}
+                      >
+                        <type.icon className={`w-6 h-6 ${selectedType === type.name ? "text-primary" : "text-muted-foreground"}`} />
+                        <span className="font-semibold text-foreground">{type.name}</span>
+                      </button>
+                    );
+
+                    if (isUmrahDisabled) {
+                      return (
+                        <Tooltip key={type.name}>
+                          <TooltipTrigger asChild>
+                            {button}
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Destination should be "Middle East"</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      );
+                    }
+
+                    return button;
+                  })}
+                </TooltipProvider>
               </div>
             </motion.div>
 

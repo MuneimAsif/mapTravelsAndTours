@@ -204,7 +204,7 @@ const RamadanUmrahSection = () => {
           </p>
           <Button
             variant="outline"
-            className=" border-gold text-gold hover:bg-gold hover:text-primary px-8 py-6 mx-auto max-[400px]:px-4 max-[360px]:text-[14px] max-[360px]:px-2"
+            className=" border-gold text-gold hover:bg-gold hover:text-[#FFFFFF] px-8 py-6 mx-auto max-[400px]:px-4 max-[360px]:text-[14px] max-[360px]:px-2"
             asChild
           >
             <Link to="/customize">
