@@ -45,7 +45,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/mapTravelsAndTours/">
         {/* <HandleRedirect /> */}
         {/* <HashRouter> */}
         <ScrollToTop />

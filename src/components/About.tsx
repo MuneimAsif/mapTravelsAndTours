@@ -102,7 +102,7 @@ const About = () => {
                 alt="Global travel experiences"
                 className="w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
 
               {/* Badge Overlay */}
               {/* <div className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full bg-gold/90 text-primary">
@@ -151,7 +151,7 @@ const About = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When we started, trust was not an option on the list.
+              When it started, trust was not an option on the list.
               It was the very first brick which laided as foundation and everything else was built on the top of it. Our mission includes:
             </p>
 
