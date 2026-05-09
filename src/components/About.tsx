@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Lightbulb,
   Crown,
+  Quote,
 } from "lucide-react";
 import aboutImage from "@/assets/about-travel.webp";
 import { Button } from "./ui/button";
@@ -80,7 +81,7 @@ const About = () => {
               className="text-4xl lg:text-5xl font-bold text-white leading-tight"
               style={{ fontSize: "clamp(2.4rem,5vw,4rem)" }}
             >
-             A Trusted Travel Agency
+              A Trusted Travel Agency
               <br />  For Customized Trips
             </h1>
           </div>
@@ -114,24 +115,28 @@ const About = () => {
             </div>
 
             {/* Floating Card */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-8 -right-8 bg-card p-6 rounded-2xl shadow-elevated max-w-xs"
+              className="absolute -bottom-8 -right-8 bg-card p-6 rounded-2xl shadow-elevated max-w-xs max-[450px]:w-64 ms-4 me-4"
             >
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold animate-pulse-glow">
-                  <span className="text-2xl font-bold text-primary">15+</span>
-                </div>
-                <div>
-                  <p className="font-serif text-xl font-bold text-foreground">
-                    Years of
+                <div className="space-y-2">
+                  <p className="text-muted-foreground italic leading-relaxed flex items-start gap-2 max-[450px]:text-sm">
+                    <Quote className="w-4 h-4 mt-1 text-primary shrink-0" />
+                    <span>People remember how a journey made them feel.</span>
                   </p>
-                  <p className="text-muted-foreground">Global Excellence</p>
+
+                  <p className="text-sm text-primary/70 font-medium pl-6 tracking-wide  max-[450px]:text-xs">
+                    — Moazzam Asif Patel
+                    <span className="block text-xs text-muted-foreground font-normal">
+                      Founder, MAP Travels & Tours
+                    </span>
+                  </p>
                 </div>
               </div>
-            </motion.div> */}
+            </motion.div>
 
             {/* Decorative Element */}
             <div className="absolute -top-6 -left-6 w-24 h-24 rounded-2xl bg-sky-light/50 -z-10" />

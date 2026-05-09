@@ -95,16 +95,16 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4 max-[1100px]:gap-2">
             <a
-              href="tel:+923218273577"
+              href="tel:+923177787293"
               className={`flex items-center gap-2 text-sm font-medium transition-colors ${showScrolledStyle ? "text-foreground" : "text-white"
                 }`}
             >
               <Phone className="w-4 h-4 max-[1100px]:-mr-2" />
-              <span>+92 321 827-3577</span>
+              <span>+92 317 778-7293</span>
             </a>
             <Button className="btn-gold text-sm py-2.5 px-6 max-[1100px]:px-4" asChild>
               {/* <MessageCircleDashedIcon className="w-4 h-4" /> */}
-              <a href="https://wa.me/923218273577?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
+              <a href="https://wa.me/923177787293?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
                 target="_blank" rel="noopener noreferrer">
                 Whatsapp
               </a>

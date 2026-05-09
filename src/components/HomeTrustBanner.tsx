@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 import mukarram from "@/assets/Mukarram.webp";
 import farooq from "@/assets/Farooq.webp";
 import sufiyan from "@/assets/Sufiyan.webp";
-import hassan from "@/assets/Hassan.webp";
-import naveed from "@/assets/Naveed.webp";
+import mike from "@/assets/Mike.webp";
 import moin from "@/assets/Moin.webp";
 import usama from "@/assets/Usama.webp";
 
@@ -17,41 +16,41 @@ const HomeTrustBanner = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const testimonials = [
     {
+      name: "Usama",
+      location: "South Africa",
+      text: "The sincerity and care you bring to everything you do is truly inspiring. You never make empty promises and that kind of honesty is incredibly rare. A travel partner worth trusting completely",
+      image: usama,
+    },
+    {
       name: "Mukarram",
       location: "Pakistan",
       text: "Your honesty admire me most. You never oversell anything. I'd confidently recommend you to anyone looking for a trustworthy travel partner",
       image: mukarram,
     },
     {
-      name: "Usama",
-      location: "South Africa",
-      text: "The sincerity and care you bring to everything you do is truly inspiring. You never make empty promises and that kind of honesty is incredibly rare. A travel partner worth trusting completely.",
-      image: usama,
+      name: "Mike",
+      location: "Canada",
+      text: "You put so much genuine effort into what you do. Completely trustworthy and professional in every way. My absolute first recommendation for anyone planning their next journey",
+      image: mike,
     },
+    // {
+    //   name: "Farooq",
+    //   location: "Pakistan",
+    //   text: "Rarely meet someone so passionate about what they do. A genuinely reliable person. My go-to recommendation for anyone planning to travel.",
+    //   image: farooq,
+    // },
     {
       name: "Sufiyan",
       location: "Pakistan",
-      text: "The dedication and attention to detail you put to make a trip successful is remarkable. You have won my trust with your exceptional services.",
+      text: "The dedication and attention to detail you put to make a trip successful is remarkable. You have won my trust with your exceptional services",
       image: sufiyan,
-    },
-    {
-      name: "Naveed",
-      location: "Pakistan",
-      text: "You put so much genuine effort into what you do. Completely trustworthy and professional in every way. My absolute first recommendation for anyone planning their next journey.",
-      image: naveed,
-    },
-    {
-      name: "Farooq",
-      location: "Pakistan",
-      text: "Rarely meet someone so passionate about what they do. A genuinely reliable person. My go-to recommendation for anyone planning to travel.",
-      image: farooq,
-    },
-    {
-      name: "Moin",
-      location: "Pakistan",
-      text: "I truly admire your working and hardwork to making every trip perfect. You are the person of rare integrity and I can trust you with my travel plans without any hesitation whatsoever.",
-      image: moin,
-    },
+    }
+    // {
+    //   name: "Moin",
+    //   location: "Pakistan",
+    //   text: "I truly admire your working and hardwork to making every trip perfect. You are the person of rare integrity and I can trust you with my travel plans without any hesitation whatsoever.",
+    //   image: moin,
+    // },
   ];
   return (
     <section className="py-16 bg-primary relative overflow-hidden">

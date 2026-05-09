@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+92 321 827 3577",
+    value: "+92 317 778 7293",
     description: "Available 24/7",
   },
   {
@@ -56,7 +56,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "923218273577";
+    const phoneNumber = "923177787293"; // MAP Travels & Tours WhatsApp number
 
     // 2. Message Format
     const message = `*New Trip Request*%0A` +
@@ -131,7 +131,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <a
-                href="https://wa.me/923218273577?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
+                href="https://wa.me/923177787293?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition-transform shadow-lg"

@@ -69,7 +69,7 @@ const RamadanUmrahSection = () => {
           </h2>
           <p className=" text-muted-foreground mb-5 leading-relaxed text-lg">
             Is your heart still waiting to feel the blessed winds of Makkah and Madinah? This can be a sign.
-            Don't miss the chance! Pack your bags - the Holy lands are calling you.
+            Don't miss the chance! Pack your bags. The Holy lands are calling you.
           </p>
         </motion.div>
 
@@ -98,7 +98,7 @@ const RamadanUmrahSection = () => {
                   Haram-e-Kaaba
                 </h3>
                 <p className="text-white/80 text-sm md:text-base">
-                  Perform Tawaf around the House of Allah عزّوجل and exprience the spiritual energy of it.
+                  Perform Tawaf around the House of Allah عزّوجل and experience the spiritual energy of it.
                 </p>
               </div>
             </div>

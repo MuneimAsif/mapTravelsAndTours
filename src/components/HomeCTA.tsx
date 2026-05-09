@@ -40,7 +40,7 @@ const HomeCTA = () => {
               </Button>
               <Button className="btn-outline-light">
             <a
-              href="tel:+923218273577"
+              href="tel:+923177787293"
               className={`flex items-center gap-2 text-sm font-medium}`}
             >
               <Phone className="w-4 h-4" />
