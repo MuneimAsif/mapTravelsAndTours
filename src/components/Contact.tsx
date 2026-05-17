@@ -16,29 +16,35 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
+// Environment variables with fallback defaults
+const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || "+92 317 778 7293";
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "info.map@gmail.com";
+const OFFICE_LOCATION = import.meta.env.VITE_OFFICE_LOCATION || "Karachi, Pakistan";
+const OFFICE_HOURS = import.meta.env.VITE_OFFICE_HOURS || "09:00 am - 06:00 pm";
+
 const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+92 317 778 7293",
+    value: CONTACT_PHONE,
     description: "Available 24/7",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info.map@gmail.com",
+    value: CONTACT_EMAIL,
     description: "Response within 2 hours",
   },
   {
     icon: MapPin,
     title: "Office",
-    value: "Karachi, Pakistan",
+    value: OFFICE_LOCATION,
     description: "Visit by appointment",
   },
   {
     icon: Clock,
     title: "Hours",
-    value: "09:00 am - 06:00 pm",
+    value: OFFICE_HOURS,
     description: "Mon - Sat",
   },
 ];
@@ -56,7 +62,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "923177787293"; // MAP Travels & Tours WhatsApp number
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE || "923177787293"; // WhatsApp number from env
 
     // 2. Message Format
     const message = `*New Trip Request*%0A` +
@@ -131,7 +137,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <a
-                href="https://wa.me/923177787293?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20"
+                href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_PHONE || "923177787293"}?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition-transform shadow-lg"

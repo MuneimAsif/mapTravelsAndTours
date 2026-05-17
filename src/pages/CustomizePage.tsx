@@ -53,7 +53,7 @@ const CustomizePage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "923177787293"; // MAP Travels & Tours WhatsApp number
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE || "923177787293"; // WhatsApp number from env
 
     // 2. Message Format
     const message = `*New Trip Request*%0A` +
