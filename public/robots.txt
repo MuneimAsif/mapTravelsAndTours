@@ -6,7 +6,7 @@ Allow: /
 Disallow: 
 
 # Sitemap location
-Sitemap: https://maptravel.com/sitemap.xml
+Sitemap: https://maptravelsandtours.com/sitemap.xml
 
 # Specific rules for common crawlers
 User-agent: Googlebot
