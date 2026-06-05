@@ -1,44 +1,31 @@
-<!-- <!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <meta charset="utf-8">
+    <title>404 - Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-        // Debug: Log that 404.html is being served
-        console.log('404.html loaded');
-        
-        const pathname = window.location.pathname;
-        const search = window.location.search;
-        const fullPath = pathname + search;
-        
-        console.log('Full path:', fullPath);
-        
-        // Store the path that was requested so React Router can redirect to it
-        sessionStorage.redirect = fullPath;
-        console.log('Stored redirect:', sessionStorage.redirect);
-        
-        // Redirect to home page
-        window.location.href = '/mapTravelsAndTours/';
-        console.log('Redirecting to /mapTravelsAndTours/');
+        // Netlify/Vercel SPA routing - redirect 404s to home
+        // Netlify/Vercel automatically handles this, but this is a fallback
+        if (window.location.pathname !== '/' && !window.location.pathname.includes('.')) {
+            window.location.href = '/';
+        }
     </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .container { text-align: center; }
+        h1 { font-size: 4rem; margin-bottom: 1rem; }
+        p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        a { display: inline-block; padding: 0.75rem 2rem; background: white; color: #667eea; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: transform 0.2s; }
+        a:hover { transform: scale(1.05); }
+    </style>
 </head>
 <body>
-    <p>Redirecting to homepage...</p>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page not found. Redirecting to home...</p>
+        <a href="/">← Back to Home</a>
+    </div>
 </body>
-</html> -->
-
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <script>
-        // GitHub Pages SPA redirect fix
-        var path = window.location.pathname;
-        var repo = "/mapTravelsAndTours";
-        window.location.replace(repo + "/?p=" + path.replace(repo, ""));
-    </script>
-</head>
-
 </html>

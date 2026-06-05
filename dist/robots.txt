@@ -1,0 +1,22 @@
+# Robots.txt for MAP Travels & Tours
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Sitemap location
+Sitemap: https://maptravel.com/sitemap.xml
+
+# Specific rules for common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

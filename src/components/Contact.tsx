@@ -18,7 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Environment variables with fallback defaults
 const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || "+92 317 778 7293";
-const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "info.map@gmail.com";
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "maptravelstours@gmail.com";
 const OFFICE_LOCATION = import.meta.env.VITE_OFFICE_LOCATION || "Karachi, Pakistan";
 const OFFICE_HOURS = import.meta.env.VITE_OFFICE_HOURS || "09:00 am - 06:00 pm";
 
@@ -33,7 +33,7 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: CONTACT_EMAIL,
-    description: "Response within 2 hours",
+    description: "Response within 30 minutes",
   },
   {
     icon: MapPin,
@@ -175,7 +175,6 @@ const Contact = () => {
                     required
                   />
                 </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
