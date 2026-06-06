@@ -33,7 +33,7 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: CONTACT_EMAIL,
-    description: "Response within 30 minutes",
+    description: "Response within 1 hour",
   },
   {
     icon: MapPin,
