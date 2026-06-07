@@ -9,7 +9,9 @@ import {
   Send,
   MessageCircle,
   CheckCircle,
-  Globe
+  Globe,
+  Instagram,
+  Facebook
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -130,11 +132,12 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* WhatsApp CTA */}
+            {/* Social Media CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex items-center gap-4 flex-wrap"
             >
               <a
                 href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_PHONE || "923177787293"}?text=Hello%20MAP%20Travels%20And%20Tours!%20I%20wanna%20discuss%20about:%20`}
@@ -144,6 +147,24 @@ const Contact = () => {
               >
                 <MessageCircle className="w-6 h-6" />
                 <span>Chat on WhatsApp</span>
+              </a>
+              <a
+                href="https://www.instagram.com/map.travelsandtours"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#FD1D1D] to-[#833AB4] text-white font-semibold hover:scale-105 transition-transform shadow-lg"
+                title="Follow on Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61581089413259"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1877F2] text-white font-semibold hover:scale-105 transition-transform shadow-lg"
+                title="Follow on Facebook"
+              >
+                <Facebook className="w-6 h-6" />
               </a>
             </motion.div>
           </motion.div>
