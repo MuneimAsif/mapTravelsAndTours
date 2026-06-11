@@ -251,7 +251,7 @@ const CustomizePage = () => {
               </Button>
               <p className="text-sm text-muted-foreground mt-4 mb-8">
                 <Check className="w-4 h-4 inline mr-1 text-gold" />
-                Our travel expert will contact you within 2 hours
+                Our travel expert will contact you within 1 hour
               </p>
             </motion.div>
           </form>
